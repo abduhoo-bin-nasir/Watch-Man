@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" width="100%" height="100%">
+  <defs>
+    <!-- Dark gritty background gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070a" />
+      <stop offset="50%" stop-color="#0b0f14" />
+      <stop offset="100%" stop-color="#020304" />
+    </linearGradient>
+
+    <!-- Red glitch warning gradient -->
+    <linearGradient id="red-glitch" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff0033" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#800000" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ff0033" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- CRT Scanline Pattern -->
+    <pattern id="scanlines" width="100" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="100" y2="0" stroke="#000000" stroke-width="1.5" opacity="0.4" />
+    </pattern>
+
+    <!-- Glitch Filter -->
+    <filter id="glitch">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05 0.95" numOctaves="1" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="320" fill="url(#bg-grad)" />
+
+  <!-- ASCII Background Matrix Effect -->
+  <g fill="#1a262b" font-family="monospace" font-size="12" opacity="0.25">
+    <text x="20" y="30">#====*===========#+-- . . : : : : : : : : : : : : / : : : : : : : : : /</text>
+    <text x="20" y="60">===#=1=2==========++-- . . . . . . . . . . / : : : : : : : : : / : : :-</text>
+    <text x="20" y="90">/=#####===========+* - - . . . . . . . . . . . . . . . . . . . . .</text>
+    <text x="20" y="120">==3=///======4=====* - - . . . . . . . . . . : 00000000 : . . . . - -</text>
+    <text x="20" y="150">===#5========6=====* - - . . *-- . . . . . . . . . . . . : - -</text>
+    <text x="20" y="180">/=================* - - . . **#-- . . / : : - #####== - * . . - -</text>
+    <text x="20" y="210">==#==========7=8===* - - =######%- | . . - #######-- . . - %%%/#</text>
+    <text x="20" y="240">==============%@@@@@| - - ===#####| == - - #######: : : - |%%@@%%%</text>
+    <text x="20" y="270">==========%%%@@@@@@@+=== %%%%%@@@ ++=# - .######## . -%+%@@@+++</text>
+    <text x="20" y="300">========%%%%%@@@@@@@+===%%%%%@@@@ ++=# -| - @@@@@@@@ : | *%+%@======</text>
+  </g>
+
+  <!-- Blood Vignette / Atmospheric Fog -->
+  <rect width="1000" height="320" fill="url(#red-glitch)" />
+
+  <!-- Main Title: WATCH-MAN -->
+  <g transform="translate(50, 140)">
+    <!-- Red Shadow Glitch -->
+    <text x="-4" y="4" font-family="&#39;Courier New&#39;, monospace" font-weight="900" font-size="78" fill="#ff0033" opacity="0.7" filter="url(#glitch)">WATCH-MAN</text>
+    <!-- Cyan Shadow Glitch -->
+    <text x="4" y="-2" font-family="&#39;Courier New&#39;, monospace" font-weight="900" font-size="78" fill="#00ffff" opacity="0.5">WATCH-MAN</text>
+    <!-- Main Text -->
+    <text x="0" y="0" font-family="&#39;Courier New&#39;, monospace" font-weight="900" font-size="78" fill="#f0f6fc" letter-spacing="4">WATCH-MAN</text>
+  </g>
+
+  <!-- Subtitle -->
+  <text x="55" y="185" font-family="&#39;Courier New&#39;, monospace" font-size="20" fill="#da3633" font-weight="bold" letter-spacing="2">
+    [ERR 404: COMPANION PROTOCOL CORRUPTED]
+  </text>
+
+  <text x="55" y="215" font-family="&#39;Courier New&#39;, monospace" font-size="14" fill="#8b949e" letter-spacing="1">
+    ASCII Raycasted Detective Noir  |  Offline Local LLM Voice Pipeline  |  C++17 Engine
+  </text>
+
+  <!-- ASCII Eye / Watch Symbol -->
+  <g transform="translate(800, 130)" stroke="#ff0033" stroke-width="2" fill="none">
+    <circle cx="0" cy="0" r="60" stroke="#30363d" stroke-width="4" />
+    <circle cx="0" cy="0" r="50" stroke="#da3633" stroke-linecap="round" stroke-dasharray="10 5" />
+    <polygon points="0,-40 10,-10 40,0 10,10 0,40 -10,10 -40,0 -10,-10" fill="#da3633" opacity="0.6" />
+    <circle cx="0" cy="0" r="12" fill="#ff0033" />
+    <circle cx="-3" cy="-3" r="4" fill="#ffffff" />
+  </g>
+
+  <!-- Terminal Alert Box -->
+  <rect x="55" y="240" width="620" height="42" fill="#161b22" stroke="#30363d" rx="4" />
+  <text x="70" y="266" font-family="&#39;Courier New&#39;, monospace" font-size="13" fill="#7d8590">
+    Watch AI: <tspan fill="#ff7b72">"Case loaded. Don't expect me to enjoy it."</tspan>
+  </text>
+
+  <!-- Scanline Overlay -->
+  <rect width="1000" height="320" fill="url(#scanlines)" pointer-events="none" />
+
+  <!-- Border -->
+  <rect x="1" y="1" width="998" height="318" fill="none" stroke="#30363d" stroke-width="2" />
+</svg>
