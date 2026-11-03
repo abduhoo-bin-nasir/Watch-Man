@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="590" height="190" viewBox="0 0 590 190" role="img" aria-label="Offline voice companion using whisper.cpp, llama.cpp and Piper, running entirely locally.">
+<style>
+  text{font-family:'Courier New', Courier, 'DejaVu Sans Mono', 'Liberation Mono', monospace;}
+  .blink{animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{0%,60%{opacity:1}61%,100%{opacity:0}}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important}}
+
+  .bar{animation:bar 1.3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  @keyframes bar{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+  .scan{animation:scan 2.6s linear infinite} @keyframes scan{from{transform:translateY(-6px)}to{transform:translateY(58px)}}
+  .hl{animation:hl 3.6s steps(1) infinite} @keyframes hl{0%{opacity:1}33%{opacity:.25}66%{opacity:.25}100%{opacity:1}}
+  .hl2{animation:hl2 3.6s steps(1) infinite} @keyframes hl2{0%,33%{opacity:.25}34%,66%{opacity:1}67%,100%{opacity:.25}}
+  .hl3{animation:hl3 3.6s steps(1) infinite} @keyframes hl3{0%,66%{opacity:.25}67%,100%{opacity:1}}
+</style>
+<rect x=".5" y=".5" width="589" height="189" rx="10" fill="#101614" stroke="#25332d"/>
+<rect x=".5" y=".5" width="5" height="189" rx="2" fill="#8fb89a"/>
+<g transform="translate(28,36)"><rect width="84" height="84" rx="6" fill="#0b100e" stroke="#25332d"/><g transform="translate(0,6)"><rect class="bar" x="10" y="28" width="8" height="28" rx="3" fill="#8fb89a" style="animation-delay:0.00s"/><rect class="bar" x="24" y="24" width="8" height="42" rx="3" fill="#8fb89a" style="animation-delay:0.17s"/><rect class="bar" x="38" y="20" width="8" height="56" rx="3" fill="#8fb89a" style="animation-delay:0.34s"/><rect class="bar" x="52" y="24" width="8" height="35" rx="3" fill="#8fb89a" style="animation-delay:0.51s"/><rect class="bar" x="66" y="20" width="8" height="49" rx="3" fill="#8fb89a" style="animation-delay:0.68s"/></g></g>
+<text x="136" y="50" font-size="22" font-weight="bold" fill="#8fb89a" letter-spacing="1">OFFLINE VOICE COMPANION</text>
+<text x="136" y="92" font-size="16" fill="#e6dfcb" fill-opacity=".88">Talk to your wrist AI in real time.</text><text x="136" y="117" font-size="16" fill="#e6dfcb" fill-opacity=".88">whisper.cpp for speech to text,</text><text x="136" y="142" font-size="16" fill="#e6dfcb" fill-opacity=".88">llama.cpp for local inference,</text><text x="136" y="167" font-size="16" fill="#e6dfcb" fill-opacity=".88">Piper for neural speech. No cloud.</text>
+</svg>

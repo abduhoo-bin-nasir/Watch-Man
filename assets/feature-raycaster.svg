@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="590" height="190" viewBox="0 0 590 190" role="img" aria-label="Custom C++17 raycaster built from scratch with Raylib: corridors, dynamic torch lighting, procedurally textured walls and billboard NPC sprites.">
+<style>
+  text{font-family:'Courier New', Courier, 'DejaVu Sans Mono', 'Liberation Mono', monospace;}
+  .blink{animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{0%,60%{opacity:1}61%,100%{opacity:0}}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important}}
+
+  .bar{animation:bar 1.3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  @keyframes bar{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+  .scan{animation:scan 2.6s linear infinite} @keyframes scan{from{transform:translateY(-6px)}to{transform:translateY(58px)}}
+  .hl{animation:hl 3.6s steps(1) infinite} @keyframes hl{0%{opacity:1}33%{opacity:.25}66%{opacity:.25}100%{opacity:1}}
+  .hl2{animation:hl2 3.6s steps(1) infinite} @keyframes hl2{0%,33%{opacity:.25}34%,66%{opacity:1}67%,100%{opacity:.25}}
+  .hl3{animation:hl3 3.6s steps(1) infinite} @keyframes hl3{0%,66%{opacity:.25}67%,100%{opacity:1}}
+</style>
+<rect x=".5" y=".5" width="589" height="189" rx="10" fill="#101614" stroke="#25332d"/>
+<rect x=".5" y=".5" width="5" height="189" rx="2" fill="#e0a458"/>
+<g transform="translate(28,36)"><rect width="84" height="84" rx="6" fill="#0b100e" stroke="#25332d"/><g stroke="#e0a458" stroke-width="1.6" fill="none"><path d="M6 6L30 30M78 6L54 30M6 78L30 54M78 78L54 54"/><rect x="30" y="30" width="24" height="24"/></g><g stroke="#8fb89a" stroke-opacity=".6" fill="none"><path d="M30 30V54M54 30V54"/></g><rect class="scan" x="4" y="4" width="76" height="3" fill="#8fb89a" opacity=".7"/></g>
+<text x="136" y="50" font-size="22" font-weight="bold" fill="#e0a458" letter-spacing="1">CUSTOM C++17 RAYCASTER</text>
+<text x="136" y="92" font-size="16" fill="#e6dfcb" fill-opacity=".88">Built from scratch with Raylib, no engine.</text><text x="136" y="117" font-size="16" fill="#e6dfcb" fill-opacity=".88">Corridors, dynamic torch lighting,</text><text x="136" y="142" font-size="16" fill="#e6dfcb" fill-opacity=".88">procedurally textured walls and</text><text x="136" y="167" font-size="16" fill="#e6dfcb" fill-opacity=".88">billboard NPC sprites.</text>
+</svg>

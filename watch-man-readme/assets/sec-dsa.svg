@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="56" viewBox="0 0 1200 56" role="img" aria-label="Under The Hood">
+<style>
+  text{font-family:'Courier New', Courier, 'DejaVu Sans Mono', 'Liberation Mono', monospace;}
+  .blink{animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{0%,60%{opacity:1}61%,100%{opacity:0}}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important}}
+</style>
+<rect width="1200" height="56" rx="8" fill="#101614"/>
+<rect width="5" height="56" rx="2" fill="#e0a458"/>
+<text x="26" y="35" font-size="17" fill="#e0a458" letter-spacing="1">[ 05 ]</text>
+<text x="104" y="37" font-size="23" font-weight="bold" fill="#e6dfcb" letter-spacing="5">UNDER THE HOOD</text>
+<text x="1160" y="34" font-size="12" fill="#8fb89a" letter-spacing="3" text-anchor="end">DATA STRUCTURES</text>
+<rect class="blink" x="1168" y="24" width="9" height="9" fill="#e0453d"/>
+<line x1="0" y1="55.5" x2="1200" y2="55.5" stroke="#c4552d" stroke-opacity=".75"/>
+</svg>

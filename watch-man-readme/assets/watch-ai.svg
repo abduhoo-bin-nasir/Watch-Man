@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-label="The rogue wrist AI has hidden drives: Ego, Paranoia and Trust. Illustration of a negotiation: pleading fails, flattery raises trust and unlocks a clue.">
+<style>
+  text{font-family:'Courier New', Courier, 'DejaVu Sans Mono', 'Liberation Mono', monospace;}
+  .blink{animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{0%,60%{opacity:1}61%,100%{opacity:0}}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important}}
+
+@keyframes l0{0%,3.99%{opacity:0}6%,90%{opacity:1}95%,100%{opacity:0}}
+@keyframes l1{0%,11.99%{opacity:0}14%,90%{opacity:1}95%,100%{opacity:0}}
+@keyframes l2{0%,19.99%{opacity:0}22%,90%{opacity:1}95%,100%{opacity:0}}
+@keyframes l3{0%,35.99%{opacity:0}38%,90%{opacity:1}95%,100%{opacity:0}}
+@keyframes l4{0%,43.99%{opacity:0}46%,90%{opacity:1}95%,100%{opacity:0}}
+@keyframes l5{0%,51.99%{opacity:0}54%,90%{opacity:1}95%,100%{opacity:0}}
+@keyframes l6{0%,61.99%{opacity:0}64%,90%{opacity:1}95%,100%{opacity:0}}
+
+  .iris{animation:look 5s ease-in-out infinite}
+  @keyframes look{0%,100%{transform:translateX(-9px)}50%{transform:translateX(9px)}}
+  .ring{animation:rp 2.4s ease-in-out infinite} @keyframes rp{0%,100%{opacity:.4}50%{opacity:1}}
+</style>
+<defs>
+  <linearGradient id="case" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#46544d"/><stop offset=".5" stop-color="#1b2420"/><stop offset="1" stop-color="#0b0f0e"/></linearGradient>
+  <linearGradient id="strap" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0d1210"/><stop offset=".5" stop-color="#1c2622"/><stop offset="1" stop-color="#0d1210"/></linearGradient>
+  <clipPath id="eyeclip"><ellipse cx="0" cy="0" rx="86" ry="46"/></clipPath>
+</defs>
+<rect width="1200" height="400" rx="12" fill="#090c0b" stroke="#25332d"/>
+<!-- watch with the AI eye -->
+<g transform="translate(220,200)">
+  <rect x="-52" y="-210" width="104" height="100" rx="8" fill="url(#strap)" stroke="#25332d"/>
+  <rect x="-52" y="110" width="104" height="100" rx="8" fill="url(#strap)" stroke="#25332d"/>
+  <circle r="142" fill="url(#case)" stroke="#3c4c45" stroke-width="3"/>
+  <circle r="134" fill="#07100c" stroke="#1c2823" stroke-width="2"/>
+  <circle class="ring" r="118" fill="none" stroke="#e0453d" stroke-width="2" stroke-dasharray="12 8"><animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="18s" repeatCount="indefinite"/></circle>
+  <circle r="104" fill="none" stroke="#25332d" stroke-width="2"/>
+  <g clip-path="url(#eyeclip)">
+    <ellipse rx="86" ry="46" fill="#120a09"/>
+    <g class="iris"><circle r="34" fill="#e0453d" opacity=".9"/><circle r="34" fill="none" stroke="#7a1a16" stroke-width="3"/><circle r="14" fill="#1a0504"/><circle cx="-8" cy="-8" r="5" fill="#fff" opacity=".9"/></g>
+  </g>
+  <ellipse rx="86" ry="46" fill="none" stroke="#e0453d" stroke-width="2.5"/>
+  <text y="96" font-size="12" fill="#e0a458" text-anchor="middle" letter-spacing="3">AI-WATCH</text>
+</g>
+<text x="220" y="372" font-size="12" fill="#68766f" text-anchor="middle" letter-spacing="3">ROGUE // UNPATCHED</text>
+<!-- console -->
+<rect x="440" y="28" width="732" height="344" rx="8" fill="#101614" stroke="#25332d"/>
+<text x="470" y="60" font-size="15" fill="#8fb89a" letter-spacing="3">HIDDEN DRIVES</text>
+<text x="1150" y="60" font-size="11" fill="#68766f" text-anchor="end" letter-spacing="2">ILLUSTRATIVE EXCHANGE</text>
+<text x="470" y="87" font-size="13" fill="#68766f" letter-spacing="2">EGO</text><rect x="590" y="76" width="330" height="14" fill="#151d1a" stroke="#25332d"/><rect x="590" y="76" width="257.4" height="14" fill="#e0453d"><animate attributeName="width" values="257;257;257;205;205" keyTimes="0;.30;.46;.70;1" dur="16s" repeatCount="indefinite"/></rect>
+<text x="470" y="111" font-size="13" fill="#68766f" letter-spacing="2">PARANOIA</text><rect x="590" y="100" width="330" height="14" fill="#151d1a" stroke="#25332d"/><rect x="590" y="100" width="181.5" height="14" fill="#e0a458"><animate attributeName="width" values="182;182;182;158;158" keyTimes="0;.30;.46;.70;1" dur="16s" repeatCount="indefinite"/></rect>
+<text x="470" y="135" font-size="13" fill="#68766f" letter-spacing="2">TRUST</text><rect x="590" y="124" width="330" height="14" fill="#151d1a" stroke="#25332d"/><rect x="590" y="124" width="39.599999999999994" height="14" fill="#8fb89a"><animate attributeName="width" values="40;40;40;112;172" keyTimes="0;.30;.46;.70;1" dur="16s" repeatCount="indefinite"/></rect>
+<line x1="470" y1="150" x2="1150" y2="150" stroke="#25332d" stroke-dasharray="3 5"/>
+<text style="animation:l0 16s infinite" x="470" y="168" font-size="17" fill="#e6dfcb" xml:space="preserve">YOU   &gt; "Come on. Just tell me what you saw."</text>
+<text style="animation:l1 16s infinite" x="470" y="199" font-size="17" fill="#8fb89a" xml:space="preserve">        intent: PLEADING</text>
+<text style="animation:l2 16s infinite" x="470" y="230" font-size="17" fill="#e0a458" xml:space="preserve">WATCH &gt; "Begging suits you. Still no."</text>
+<text style="animation:l3 16s infinite" x="470" y="261" font-size="17" fill="#e6dfcb" xml:space="preserve">YOU   &gt; "You are the sharpest thing in this block."</text>
+<text style="animation:l4 16s infinite" x="470" y="292" font-size="17" fill="#8fb89a" xml:space="preserve">        intent: FLATTERY</text>
+<text style="animation:l5 16s infinite" x="470" y="323" font-size="17" fill="#e0a458" xml:space="preserve">WATCH &gt; "...Check the door. Do not make it weird."</text>
+<text style="animation:l6 16s infinite" x="470" y="354" font-size="20" fill="#e0453d" xml:space="preserve" letter-spacing="3" font-weight="bold">[ CLUE UNLOCKED ]</text>
+
+</svg>
