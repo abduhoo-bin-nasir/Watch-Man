@@ -20,6 +20,9 @@ BUILD_EXAMPLES:BOOL=OFF
 //Build shared libraries
 BUILD_SHARED_LIBS:BOOL=OFF
 
+//Build the headless logic tests
+BUILD_TESTS:BOOL=ON
+
 //Value Computed by CMake
 Block7_BINARY_DIR:STATIC=D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build
 

@@ -1,4 +1,5 @@
 D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build/CMakeFiles/block7.dir
+D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build/CMakeFiles/logic_test.dir
 D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build/CMakeFiles/package.dir
 D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build/CMakeFiles/package_source.dir
 D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build/CMakeFiles/edit_cache.dir

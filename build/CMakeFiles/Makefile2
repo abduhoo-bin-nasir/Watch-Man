@@ -63,11 +63,13 @@ CMAKE_BINARY_DIR = D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\buil
 
 # The main recursive "all" target.
 all: CMakeFiles/block7.dir/all
+all: CMakeFiles/logic_test.dir/all
 all: _deps/raylib-build/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/block7.dir/codegen
+codegen: CMakeFiles/logic_test.dir/codegen
 codegen: _deps/raylib-build/codegen
 .PHONY : codegen
 
@@ -77,6 +79,7 @@ preinstall: _deps/raylib-build/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/block7.dir/clean
+clean: CMakeFiles/logic_test.dir/clean
 clean: _deps/raylib-build/clean
 .PHONY : clean
 
@@ -165,16 +168,16 @@ _deps/raylib-build/raylib/external/glfw/src/clean: _deps/raylib-build/raylib/ext
 # Target rules for target CMakeFiles/block7.dir
 
 # All Build rule for target.
-CMakeFiles/block7.dir/all: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 CMakeFiles/block7.dir/all: _deps/raylib-build/raylib/CMakeFiles/raylib.dir/all
+CMakeFiles/block7.dir/all: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=1,2 "Built target block7"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target block7"
 .PHONY : CMakeFiles/block7.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/block7.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles 31
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/block7.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles 0
 .PHONY : CMakeFiles/block7.dir/rule
@@ -186,13 +189,46 @@ block7: CMakeFiles/block7.dir/rule
 # codegen rule for target.
 CMakeFiles/block7.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=1,2 "Finished codegen for target block7"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Finished codegen for target block7"
 .PHONY : CMakeFiles/block7.dir/codegen
 
 # clean rule for target.
 CMakeFiles/block7.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/clean
 .PHONY : CMakeFiles/block7.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/logic_test.dir
+
+# All Build rule for target.
+CMakeFiles/logic_test.dir/all: _deps/raylib-build/raylib/CMakeFiles/raylib.dir/all
+CMakeFiles/logic_test.dir/all: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=34,35,36,37,38,39,40,41,42,43,44,45 "Built target logic_test"
+.PHONY : CMakeFiles/logic_test.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/logic_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles 41
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/logic_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles 0
+.PHONY : CMakeFiles/logic_test.dir/rule
+
+# Convenience name for target.
+logic_test: CMakeFiles/logic_test.dir/rule
+.PHONY : logic_test
+
+# codegen rule for target.
+CMakeFiles/logic_test.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=34,35,36,37,38,39,40,41,42,43,44,45 "Finished codegen for target logic_test"
+.PHONY : CMakeFiles/logic_test.dir/codegen
+
+# clean rule for target.
+CMakeFiles/logic_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/clean
+.PHONY : CMakeFiles/logic_test.dir/clean
 
 #=============================================================================
 # Target rules for target _deps/raylib-build/CMakeFiles/uninstall.dir
@@ -233,7 +269,7 @@ _deps/raylib-build/CMakeFiles/uninstall.dir/clean:
 _deps/raylib-build/raylib/CMakeFiles/raylib.dir/all: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\CMakeFiles\raylib.dir\build.make _deps/raylib-build/raylib/CMakeFiles/raylib.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\CMakeFiles\raylib.dir\build.make _deps/raylib-build/raylib/CMakeFiles/raylib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=24,25,26,27,28,29,30,31 "Built target raylib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=46,47,48,49,50,51,52,53 "Built target raylib"
 .PHONY : _deps/raylib-build/raylib/CMakeFiles/raylib.dir/all
 
 # Build rule for subdir invocation for target.
@@ -250,7 +286,7 @@ raylib: _deps/raylib-build/raylib/CMakeFiles/raylib.dir/rule
 # codegen rule for target.
 _deps/raylib-build/raylib/CMakeFiles/raylib.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\CMakeFiles\raylib.dir\build.make _deps/raylib-build/raylib/CMakeFiles/raylib.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=24,25,26,27,28,29,30,31 "Finished codegen for target raylib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=46,47,48,49,50,51,52,53 "Finished codegen for target raylib"
 .PHONY : _deps/raylib-build/raylib/CMakeFiles/raylib.dir/codegen
 
 # clean rule for target.
@@ -265,7 +301,7 @@ _deps/raylib-build/raylib/CMakeFiles/raylib.dir/clean:
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33 "Built target glfw"
 .PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
@@ -282,7 +318,7 @@ glfw: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/rule
 # codegen rule for target.
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\glfw.dir\build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 "Finished codegen for target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33 "Finished codegen for target glfw"
 .PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/codegen
 
 # clean rule for target.
@@ -297,7 +333,7 @@ _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/glfw.dir/clean:
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\update_mappings.dir\build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\update_mappings.dir\build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=32 "Built target update_mappings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=54 "Built target update_mappings"
 .PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/all
 
 # Build rule for subdir invocation for target.
@@ -314,7 +350,7 @@ update_mappings: _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_m
 # codegen rule for target.
 _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\update_mappings.dir\build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=32 "Finished codegen for target update_mappings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=54 "Finished codegen for target update_mappings"
 .PHONY : _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/codegen
 
 # clean rule for target.

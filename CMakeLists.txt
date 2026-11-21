@@ -23,11 +23,28 @@ if(NOT raylib_FOUND)
   FetchContent_MakeAvailable(raylib)
 endif()
 
-add_executable(block7 src/main.cpp)
+set(GAME_SOURCES
+  src/Game.cpp
+  src/Level.cpp        src/LevelData.cpp
+  src/Entities.cpp     src/CharacterArt.cpp
+  src/Dialogue.cpp     src/DialogueData.cpp
+  src/ClueBook.cpp
+  src/Renderer.cpp
+  src/Ui.cpp)
+
+add_executable(block7 src/main.cpp ${GAME_SOURCES})
 target_link_libraries(block7 PRIVATE raylib)
 
 if(MSVC)
   target_compile_options(block7 PRIVATE /W3)
 else()
   target_compile_options(block7 PRIVATE -Wall -Wextra)
+endif()
+
+# Headless logic tests (no window). Run build/logic_test after building.
+option(BUILD_TESTS "Build the headless logic tests" ON)
+if(BUILD_TESTS)
+  add_executable(logic_test tests/logic_test.cpp ${GAME_SOURCES})
+  target_include_directories(logic_test PRIVATE src)
+  target_link_libraries(logic_test PRIVATE raylib)
 endif()

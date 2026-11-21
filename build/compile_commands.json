@@ -6,6 +6,132 @@
   "output": "CMakeFiles/block7.dir/src/main.cpp.obj"
 },
 {
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/block7.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -o CMakeFiles\\block7.dir\\src\\Game.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\Game.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Game.cpp",
+  "output": "CMakeFiles/block7.dir/src/Game.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/block7.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -o CMakeFiles\\block7.dir\\src\\Level.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\Level.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Level.cpp",
+  "output": "CMakeFiles/block7.dir/src/Level.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/block7.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -o CMakeFiles\\block7.dir\\src\\LevelData.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\LevelData.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/LevelData.cpp",
+  "output": "CMakeFiles/block7.dir/src/LevelData.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/block7.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -o CMakeFiles\\block7.dir\\src\\Entities.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\Entities.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Entities.cpp",
+  "output": "CMakeFiles/block7.dir/src/Entities.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/block7.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -o CMakeFiles\\block7.dir\\src\\CharacterArt.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\CharacterArt.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/CharacterArt.cpp",
+  "output": "CMakeFiles/block7.dir/src/CharacterArt.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/block7.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -o CMakeFiles\\block7.dir\\src\\Dialogue.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\Dialogue.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Dialogue.cpp",
+  "output": "CMakeFiles/block7.dir/src/Dialogue.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/block7.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -o CMakeFiles\\block7.dir\\src\\DialogueData.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\DialogueData.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/DialogueData.cpp",
+  "output": "CMakeFiles/block7.dir/src/DialogueData.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/block7.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -o CMakeFiles\\block7.dir\\src\\ClueBook.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\ClueBook.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/ClueBook.cpp",
+  "output": "CMakeFiles/block7.dir/src/ClueBook.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/block7.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -o CMakeFiles\\block7.dir\\src\\Renderer.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\Renderer.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Renderer.cpp",
+  "output": "CMakeFiles/block7.dir/src/Renderer.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/block7.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -o CMakeFiles\\block7.dir\\src\\Ui.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\Ui.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Ui.cpp",
+  "output": "CMakeFiles/block7.dir/src/Ui.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/logic_test.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\logic_test.dir\\tests\\logic_test.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\tests\\logic_test.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/tests/logic_test.cpp",
+  "output": "CMakeFiles/logic_test.dir/tests/logic_test.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/logic_test.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\logic_test.dir\\src\\Game.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\Game.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Game.cpp",
+  "output": "CMakeFiles/logic_test.dir/src/Game.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/logic_test.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\logic_test.dir\\src\\Level.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\Level.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Level.cpp",
+  "output": "CMakeFiles/logic_test.dir/src/Level.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/logic_test.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\logic_test.dir\\src\\LevelData.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\LevelData.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/LevelData.cpp",
+  "output": "CMakeFiles/logic_test.dir/src/LevelData.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/logic_test.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\logic_test.dir\\src\\Entities.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\Entities.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Entities.cpp",
+  "output": "CMakeFiles/logic_test.dir/src/Entities.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/logic_test.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\logic_test.dir\\src\\CharacterArt.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\CharacterArt.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/CharacterArt.cpp",
+  "output": "CMakeFiles/logic_test.dir/src/CharacterArt.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/logic_test.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\logic_test.dir\\src\\Dialogue.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\Dialogue.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Dialogue.cpp",
+  "output": "CMakeFiles/logic_test.dir/src/Dialogue.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/logic_test.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\logic_test.dir\\src\\DialogueData.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\DialogueData.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/DialogueData.cpp",
+  "output": "CMakeFiles/logic_test.dir/src/DialogueData.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/logic_test.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\logic_test.dir\\src\\ClueBook.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\ClueBook.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/ClueBook.cpp",
+  "output": "CMakeFiles/logic_test.dir/src/ClueBook.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/logic_test.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\logic_test.dir\\src\\Renderer.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\Renderer.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Renderer.cpp",
+  "output": "CMakeFiles/logic_test.dir/src/Renderer.cpp.obj"
+},
+{
+  "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/logic_test.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\logic_test.dir\\src\\Ui.cpp.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\src\\Ui.cpp",
+  "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Ui.cpp",
+  "output": "CMakeFiles/logic_test.dir/src/Ui.cpp.obj"
+},
+{
   "directory": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build/_deps/raylib-build/raylib",
   "command": "C:\\msys64\\mingw64\\bin\\cc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_CRT_SECURE_NO_WARNINGS @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -O3 -DNDEBUG -std=gnu99 -o CMakeFiles\\raylib.dir\\raudio.c.obj -c D:\\Abduhoo_University\\SEMESTER_3\\projects\\Detective_game\\build\\_deps\\raylib-src\\src\\raudio.c",
   "file": "D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/build/_deps/raylib-src/src/raudio.c",

@@ -194,6 +194,19 @@ block7/fast:
 .PHONY : block7/fast
 
 #=============================================================================
+# Target rules for targets named logic_test
+
+# Build rule for target.
+logic_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 logic_test
+.PHONY : logic_test
+
+# fast build rule for target.
+logic_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/build
+.PHONY : logic_test/fast
+
+#=============================================================================
 # Target rules for targets named uninstall
 
 # Build rule for target.
@@ -245,6 +258,276 @@ update_mappings/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\update_mappings.dir\build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
 .PHONY : update_mappings/fast
 
+src/CharacterArt.obj: src/CharacterArt.cpp.obj
+.PHONY : src/CharacterArt.obj
+
+# target to build an object file
+src/CharacterArt.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/CharacterArt.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/CharacterArt.cpp.obj
+.PHONY : src/CharacterArt.cpp.obj
+
+src/CharacterArt.i: src/CharacterArt.cpp.i
+.PHONY : src/CharacterArt.i
+
+# target to preprocess a source file
+src/CharacterArt.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/CharacterArt.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/CharacterArt.cpp.i
+.PHONY : src/CharacterArt.cpp.i
+
+src/CharacterArt.s: src/CharacterArt.cpp.s
+.PHONY : src/CharacterArt.s
+
+# target to generate assembly for a file
+src/CharacterArt.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/CharacterArt.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/CharacterArt.cpp.s
+.PHONY : src/CharacterArt.cpp.s
+
+src/ClueBook.obj: src/ClueBook.cpp.obj
+.PHONY : src/ClueBook.obj
+
+# target to build an object file
+src/ClueBook.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/ClueBook.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/ClueBook.cpp.obj
+.PHONY : src/ClueBook.cpp.obj
+
+src/ClueBook.i: src/ClueBook.cpp.i
+.PHONY : src/ClueBook.i
+
+# target to preprocess a source file
+src/ClueBook.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/ClueBook.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/ClueBook.cpp.i
+.PHONY : src/ClueBook.cpp.i
+
+src/ClueBook.s: src/ClueBook.cpp.s
+.PHONY : src/ClueBook.s
+
+# target to generate assembly for a file
+src/ClueBook.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/ClueBook.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/ClueBook.cpp.s
+.PHONY : src/ClueBook.cpp.s
+
+src/Dialogue.obj: src/Dialogue.cpp.obj
+.PHONY : src/Dialogue.obj
+
+# target to build an object file
+src/Dialogue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Dialogue.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Dialogue.cpp.obj
+.PHONY : src/Dialogue.cpp.obj
+
+src/Dialogue.i: src/Dialogue.cpp.i
+.PHONY : src/Dialogue.i
+
+# target to preprocess a source file
+src/Dialogue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Dialogue.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Dialogue.cpp.i
+.PHONY : src/Dialogue.cpp.i
+
+src/Dialogue.s: src/Dialogue.cpp.s
+.PHONY : src/Dialogue.s
+
+# target to generate assembly for a file
+src/Dialogue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Dialogue.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Dialogue.cpp.s
+.PHONY : src/Dialogue.cpp.s
+
+src/DialogueData.obj: src/DialogueData.cpp.obj
+.PHONY : src/DialogueData.obj
+
+# target to build an object file
+src/DialogueData.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/DialogueData.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/DialogueData.cpp.obj
+.PHONY : src/DialogueData.cpp.obj
+
+src/DialogueData.i: src/DialogueData.cpp.i
+.PHONY : src/DialogueData.i
+
+# target to preprocess a source file
+src/DialogueData.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/DialogueData.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/DialogueData.cpp.i
+.PHONY : src/DialogueData.cpp.i
+
+src/DialogueData.s: src/DialogueData.cpp.s
+.PHONY : src/DialogueData.s
+
+# target to generate assembly for a file
+src/DialogueData.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/DialogueData.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/DialogueData.cpp.s
+.PHONY : src/DialogueData.cpp.s
+
+src/Entities.obj: src/Entities.cpp.obj
+.PHONY : src/Entities.obj
+
+# target to build an object file
+src/Entities.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Entities.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Entities.cpp.obj
+.PHONY : src/Entities.cpp.obj
+
+src/Entities.i: src/Entities.cpp.i
+.PHONY : src/Entities.i
+
+# target to preprocess a source file
+src/Entities.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Entities.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Entities.cpp.i
+.PHONY : src/Entities.cpp.i
+
+src/Entities.s: src/Entities.cpp.s
+.PHONY : src/Entities.s
+
+# target to generate assembly for a file
+src/Entities.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Entities.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Entities.cpp.s
+.PHONY : src/Entities.cpp.s
+
+src/Game.obj: src/Game.cpp.obj
+.PHONY : src/Game.obj
+
+# target to build an object file
+src/Game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Game.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Game.cpp.obj
+.PHONY : src/Game.cpp.obj
+
+src/Game.i: src/Game.cpp.i
+.PHONY : src/Game.i
+
+# target to preprocess a source file
+src/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Game.cpp.i
+.PHONY : src/Game.cpp.i
+
+src/Game.s: src/Game.cpp.s
+.PHONY : src/Game.s
+
+# target to generate assembly for a file
+src/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Game.cpp.s
+.PHONY : src/Game.cpp.s
+
+src/Level.obj: src/Level.cpp.obj
+.PHONY : src/Level.obj
+
+# target to build an object file
+src/Level.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Level.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Level.cpp.obj
+.PHONY : src/Level.cpp.obj
+
+src/Level.i: src/Level.cpp.i
+.PHONY : src/Level.i
+
+# target to preprocess a source file
+src/Level.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Level.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Level.cpp.i
+.PHONY : src/Level.cpp.i
+
+src/Level.s: src/Level.cpp.s
+.PHONY : src/Level.s
+
+# target to generate assembly for a file
+src/Level.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Level.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Level.cpp.s
+.PHONY : src/Level.cpp.s
+
+src/LevelData.obj: src/LevelData.cpp.obj
+.PHONY : src/LevelData.obj
+
+# target to build an object file
+src/LevelData.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/LevelData.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/LevelData.cpp.obj
+.PHONY : src/LevelData.cpp.obj
+
+src/LevelData.i: src/LevelData.cpp.i
+.PHONY : src/LevelData.i
+
+# target to preprocess a source file
+src/LevelData.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/LevelData.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/LevelData.cpp.i
+.PHONY : src/LevelData.cpp.i
+
+src/LevelData.s: src/LevelData.cpp.s
+.PHONY : src/LevelData.s
+
+# target to generate assembly for a file
+src/LevelData.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/LevelData.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/LevelData.cpp.s
+.PHONY : src/LevelData.cpp.s
+
+src/Renderer.obj: src/Renderer.cpp.obj
+.PHONY : src/Renderer.obj
+
+# target to build an object file
+src/Renderer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Renderer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Renderer.cpp.obj
+.PHONY : src/Renderer.cpp.obj
+
+src/Renderer.i: src/Renderer.cpp.i
+.PHONY : src/Renderer.i
+
+# target to preprocess a source file
+src/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Renderer.cpp.i
+.PHONY : src/Renderer.cpp.i
+
+src/Renderer.s: src/Renderer.cpp.s
+.PHONY : src/Renderer.s
+
+# target to generate assembly for a file
+src/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Renderer.cpp.s
+.PHONY : src/Renderer.cpp.s
+
+src/Ui.obj: src/Ui.cpp.obj
+.PHONY : src/Ui.obj
+
+# target to build an object file
+src/Ui.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Ui.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Ui.cpp.obj
+.PHONY : src/Ui.cpp.obj
+
+src/Ui.i: src/Ui.cpp.i
+.PHONY : src/Ui.i
+
+# target to preprocess a source file
+src/Ui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Ui.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Ui.cpp.i
+.PHONY : src/Ui.cpp.i
+
+src/Ui.s: src/Ui.cpp.s
+.PHONY : src/Ui.s
+
+# target to generate assembly for a file
+src/Ui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/Ui.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/src/Ui.cpp.s
+.PHONY : src/Ui.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -269,6 +552,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\block7.dir\build.make CMakeFiles/block7.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+tests/logic_test.obj: tests/logic_test.cpp.obj
+.PHONY : tests/logic_test.obj
+
+# target to build an object file
+tests/logic_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/tests/logic_test.cpp.obj
+.PHONY : tests/logic_test.cpp.obj
+
+tests/logic_test.i: tests/logic_test.cpp.i
+.PHONY : tests/logic_test.i
+
+# target to preprocess a source file
+tests/logic_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/tests/logic_test.cpp.i
+.PHONY : tests/logic_test.cpp.i
+
+tests/logic_test.s: tests/logic_test.cpp.s
+.PHONY : tests/logic_test.s
+
+# target to generate assembly for a file
+tests/logic_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\logic_test.dir\build.make CMakeFiles/logic_test.dir/tests/logic_test.cpp.s
+.PHONY : tests/logic_test.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -287,10 +594,44 @@ help:
 	@echo ... update_mappings
 	@echo ... block7
 	@echo ... glfw
+	@echo ... logic_test
 	@echo ... raylib
+	@echo ... src/CharacterArt.obj
+	@echo ... src/CharacterArt.i
+	@echo ... src/CharacterArt.s
+	@echo ... src/ClueBook.obj
+	@echo ... src/ClueBook.i
+	@echo ... src/ClueBook.s
+	@echo ... src/Dialogue.obj
+	@echo ... src/Dialogue.i
+	@echo ... src/Dialogue.s
+	@echo ... src/DialogueData.obj
+	@echo ... src/DialogueData.i
+	@echo ... src/DialogueData.s
+	@echo ... src/Entities.obj
+	@echo ... src/Entities.i
+	@echo ... src/Entities.s
+	@echo ... src/Game.obj
+	@echo ... src/Game.i
+	@echo ... src/Game.s
+	@echo ... src/Level.obj
+	@echo ... src/Level.i
+	@echo ... src/Level.s
+	@echo ... src/LevelData.obj
+	@echo ... src/LevelData.i
+	@echo ... src/LevelData.s
+	@echo ... src/Renderer.obj
+	@echo ... src/Renderer.i
+	@echo ... src/Renderer.s
+	@echo ... src/Ui.obj
+	@echo ... src/Ui.i
+	@echo ... src/Ui.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... tests/logic_test.obj
+	@echo ... tests/logic_test.i
+	@echo ... tests/logic_test.s
 .PHONY : help
 
 

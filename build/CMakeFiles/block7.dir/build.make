@@ -86,20 +86,190 @@ CMakeFiles/block7.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/block7.dir/src/main.cpp.s"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\main.cpp -o CMakeFiles\block7.dir\src\main.cpp.s
 
+CMakeFiles/block7.dir/src/Game.cpp.obj: CMakeFiles/block7.dir/flags.make
+CMakeFiles/block7.dir/src/Game.cpp.obj: CMakeFiles/block7.dir/includes_CXX.rsp
+CMakeFiles/block7.dir/src/Game.cpp.obj: D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Game.cpp
+CMakeFiles/block7.dir/src/Game.cpp.obj: CMakeFiles/block7.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/block7.dir/src/Game.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/block7.dir/src/Game.cpp.obj -MF CMakeFiles\block7.dir\src\Game.cpp.obj.d -o CMakeFiles\block7.dir\src\Game.cpp.obj -c D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Game.cpp
+
+CMakeFiles/block7.dir/src/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/block7.dir/src/Game.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Game.cpp > CMakeFiles\block7.dir\src\Game.cpp.i
+
+CMakeFiles/block7.dir/src/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/block7.dir/src/Game.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Game.cpp -o CMakeFiles\block7.dir\src\Game.cpp.s
+
+CMakeFiles/block7.dir/src/Level.cpp.obj: CMakeFiles/block7.dir/flags.make
+CMakeFiles/block7.dir/src/Level.cpp.obj: CMakeFiles/block7.dir/includes_CXX.rsp
+CMakeFiles/block7.dir/src/Level.cpp.obj: D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Level.cpp
+CMakeFiles/block7.dir/src/Level.cpp.obj: CMakeFiles/block7.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/block7.dir/src/Level.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/block7.dir/src/Level.cpp.obj -MF CMakeFiles\block7.dir\src\Level.cpp.obj.d -o CMakeFiles\block7.dir\src\Level.cpp.obj -c D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Level.cpp
+
+CMakeFiles/block7.dir/src/Level.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/block7.dir/src/Level.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Level.cpp > CMakeFiles\block7.dir\src\Level.cpp.i
+
+CMakeFiles/block7.dir/src/Level.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/block7.dir/src/Level.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Level.cpp -o CMakeFiles\block7.dir\src\Level.cpp.s
+
+CMakeFiles/block7.dir/src/LevelData.cpp.obj: CMakeFiles/block7.dir/flags.make
+CMakeFiles/block7.dir/src/LevelData.cpp.obj: CMakeFiles/block7.dir/includes_CXX.rsp
+CMakeFiles/block7.dir/src/LevelData.cpp.obj: D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/LevelData.cpp
+CMakeFiles/block7.dir/src/LevelData.cpp.obj: CMakeFiles/block7.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/block7.dir/src/LevelData.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/block7.dir/src/LevelData.cpp.obj -MF CMakeFiles\block7.dir\src\LevelData.cpp.obj.d -o CMakeFiles\block7.dir\src\LevelData.cpp.obj -c D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\LevelData.cpp
+
+CMakeFiles/block7.dir/src/LevelData.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/block7.dir/src/LevelData.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\LevelData.cpp > CMakeFiles\block7.dir\src\LevelData.cpp.i
+
+CMakeFiles/block7.dir/src/LevelData.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/block7.dir/src/LevelData.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\LevelData.cpp -o CMakeFiles\block7.dir\src\LevelData.cpp.s
+
+CMakeFiles/block7.dir/src/Entities.cpp.obj: CMakeFiles/block7.dir/flags.make
+CMakeFiles/block7.dir/src/Entities.cpp.obj: CMakeFiles/block7.dir/includes_CXX.rsp
+CMakeFiles/block7.dir/src/Entities.cpp.obj: D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Entities.cpp
+CMakeFiles/block7.dir/src/Entities.cpp.obj: CMakeFiles/block7.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/block7.dir/src/Entities.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/block7.dir/src/Entities.cpp.obj -MF CMakeFiles\block7.dir\src\Entities.cpp.obj.d -o CMakeFiles\block7.dir\src\Entities.cpp.obj -c D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Entities.cpp
+
+CMakeFiles/block7.dir/src/Entities.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/block7.dir/src/Entities.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Entities.cpp > CMakeFiles\block7.dir\src\Entities.cpp.i
+
+CMakeFiles/block7.dir/src/Entities.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/block7.dir/src/Entities.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Entities.cpp -o CMakeFiles\block7.dir\src\Entities.cpp.s
+
+CMakeFiles/block7.dir/src/CharacterArt.cpp.obj: CMakeFiles/block7.dir/flags.make
+CMakeFiles/block7.dir/src/CharacterArt.cpp.obj: CMakeFiles/block7.dir/includes_CXX.rsp
+CMakeFiles/block7.dir/src/CharacterArt.cpp.obj: D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/CharacterArt.cpp
+CMakeFiles/block7.dir/src/CharacterArt.cpp.obj: CMakeFiles/block7.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/block7.dir/src/CharacterArt.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/block7.dir/src/CharacterArt.cpp.obj -MF CMakeFiles\block7.dir\src\CharacterArt.cpp.obj.d -o CMakeFiles\block7.dir\src\CharacterArt.cpp.obj -c D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\CharacterArt.cpp
+
+CMakeFiles/block7.dir/src/CharacterArt.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/block7.dir/src/CharacterArt.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\CharacterArt.cpp > CMakeFiles\block7.dir\src\CharacterArt.cpp.i
+
+CMakeFiles/block7.dir/src/CharacterArt.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/block7.dir/src/CharacterArt.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\CharacterArt.cpp -o CMakeFiles\block7.dir\src\CharacterArt.cpp.s
+
+CMakeFiles/block7.dir/src/Dialogue.cpp.obj: CMakeFiles/block7.dir/flags.make
+CMakeFiles/block7.dir/src/Dialogue.cpp.obj: CMakeFiles/block7.dir/includes_CXX.rsp
+CMakeFiles/block7.dir/src/Dialogue.cpp.obj: D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Dialogue.cpp
+CMakeFiles/block7.dir/src/Dialogue.cpp.obj: CMakeFiles/block7.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/block7.dir/src/Dialogue.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/block7.dir/src/Dialogue.cpp.obj -MF CMakeFiles\block7.dir\src\Dialogue.cpp.obj.d -o CMakeFiles\block7.dir\src\Dialogue.cpp.obj -c D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Dialogue.cpp
+
+CMakeFiles/block7.dir/src/Dialogue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/block7.dir/src/Dialogue.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Dialogue.cpp > CMakeFiles\block7.dir\src\Dialogue.cpp.i
+
+CMakeFiles/block7.dir/src/Dialogue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/block7.dir/src/Dialogue.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Dialogue.cpp -o CMakeFiles\block7.dir\src\Dialogue.cpp.s
+
+CMakeFiles/block7.dir/src/DialogueData.cpp.obj: CMakeFiles/block7.dir/flags.make
+CMakeFiles/block7.dir/src/DialogueData.cpp.obj: CMakeFiles/block7.dir/includes_CXX.rsp
+CMakeFiles/block7.dir/src/DialogueData.cpp.obj: D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/DialogueData.cpp
+CMakeFiles/block7.dir/src/DialogueData.cpp.obj: CMakeFiles/block7.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/block7.dir/src/DialogueData.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/block7.dir/src/DialogueData.cpp.obj -MF CMakeFiles\block7.dir\src\DialogueData.cpp.obj.d -o CMakeFiles\block7.dir\src\DialogueData.cpp.obj -c D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\DialogueData.cpp
+
+CMakeFiles/block7.dir/src/DialogueData.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/block7.dir/src/DialogueData.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\DialogueData.cpp > CMakeFiles\block7.dir\src\DialogueData.cpp.i
+
+CMakeFiles/block7.dir/src/DialogueData.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/block7.dir/src/DialogueData.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\DialogueData.cpp -o CMakeFiles\block7.dir\src\DialogueData.cpp.s
+
+CMakeFiles/block7.dir/src/ClueBook.cpp.obj: CMakeFiles/block7.dir/flags.make
+CMakeFiles/block7.dir/src/ClueBook.cpp.obj: CMakeFiles/block7.dir/includes_CXX.rsp
+CMakeFiles/block7.dir/src/ClueBook.cpp.obj: D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/ClueBook.cpp
+CMakeFiles/block7.dir/src/ClueBook.cpp.obj: CMakeFiles/block7.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/block7.dir/src/ClueBook.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/block7.dir/src/ClueBook.cpp.obj -MF CMakeFiles\block7.dir\src\ClueBook.cpp.obj.d -o CMakeFiles\block7.dir\src\ClueBook.cpp.obj -c D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\ClueBook.cpp
+
+CMakeFiles/block7.dir/src/ClueBook.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/block7.dir/src/ClueBook.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\ClueBook.cpp > CMakeFiles\block7.dir\src\ClueBook.cpp.i
+
+CMakeFiles/block7.dir/src/ClueBook.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/block7.dir/src/ClueBook.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\ClueBook.cpp -o CMakeFiles\block7.dir\src\ClueBook.cpp.s
+
+CMakeFiles/block7.dir/src/Renderer.cpp.obj: CMakeFiles/block7.dir/flags.make
+CMakeFiles/block7.dir/src/Renderer.cpp.obj: CMakeFiles/block7.dir/includes_CXX.rsp
+CMakeFiles/block7.dir/src/Renderer.cpp.obj: D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Renderer.cpp
+CMakeFiles/block7.dir/src/Renderer.cpp.obj: CMakeFiles/block7.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/block7.dir/src/Renderer.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/block7.dir/src/Renderer.cpp.obj -MF CMakeFiles\block7.dir\src\Renderer.cpp.obj.d -o CMakeFiles\block7.dir\src\Renderer.cpp.obj -c D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Renderer.cpp
+
+CMakeFiles/block7.dir/src/Renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/block7.dir/src/Renderer.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Renderer.cpp > CMakeFiles\block7.dir\src\Renderer.cpp.i
+
+CMakeFiles/block7.dir/src/Renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/block7.dir/src/Renderer.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Renderer.cpp -o CMakeFiles\block7.dir\src\Renderer.cpp.s
+
+CMakeFiles/block7.dir/src/Ui.cpp.obj: CMakeFiles/block7.dir/flags.make
+CMakeFiles/block7.dir/src/Ui.cpp.obj: CMakeFiles/block7.dir/includes_CXX.rsp
+CMakeFiles/block7.dir/src/Ui.cpp.obj: D:/Abduhoo_University/SEMESTER_3/projects/Detective_game/src/Ui.cpp
+CMakeFiles/block7.dir/src/Ui.cpp.obj: CMakeFiles/block7.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/block7.dir/src/Ui.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/block7.dir/src/Ui.cpp.obj -MF CMakeFiles\block7.dir\src\Ui.cpp.obj.d -o CMakeFiles\block7.dir\src\Ui.cpp.obj -c D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Ui.cpp
+
+CMakeFiles/block7.dir/src/Ui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/block7.dir/src/Ui.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Ui.cpp > CMakeFiles\block7.dir\src\Ui.cpp.i
+
+CMakeFiles/block7.dir/src/Ui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/block7.dir/src/Ui.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\src\Ui.cpp -o CMakeFiles\block7.dir\src\Ui.cpp.s
+
 # Object files for target block7
 block7_OBJECTS = \
-"CMakeFiles/block7.dir/src/main.cpp.obj"
+"CMakeFiles/block7.dir/src/main.cpp.obj" \
+"CMakeFiles/block7.dir/src/Game.cpp.obj" \
+"CMakeFiles/block7.dir/src/Level.cpp.obj" \
+"CMakeFiles/block7.dir/src/LevelData.cpp.obj" \
+"CMakeFiles/block7.dir/src/Entities.cpp.obj" \
+"CMakeFiles/block7.dir/src/CharacterArt.cpp.obj" \
+"CMakeFiles/block7.dir/src/Dialogue.cpp.obj" \
+"CMakeFiles/block7.dir/src/DialogueData.cpp.obj" \
+"CMakeFiles/block7.dir/src/ClueBook.cpp.obj" \
+"CMakeFiles/block7.dir/src/Renderer.cpp.obj" \
+"CMakeFiles/block7.dir/src/Ui.cpp.obj"
 
 # External object files for target block7
 block7_EXTERNAL_OBJECTS =
 
 block7.exe: CMakeFiles/block7.dir/src/main.cpp.obj
+block7.exe: CMakeFiles/block7.dir/src/Game.cpp.obj
+block7.exe: CMakeFiles/block7.dir/src/Level.cpp.obj
+block7.exe: CMakeFiles/block7.dir/src/LevelData.cpp.obj
+block7.exe: CMakeFiles/block7.dir/src/Entities.cpp.obj
+block7.exe: CMakeFiles/block7.dir/src/CharacterArt.cpp.obj
+block7.exe: CMakeFiles/block7.dir/src/Dialogue.cpp.obj
+block7.exe: CMakeFiles/block7.dir/src/DialogueData.cpp.obj
+block7.exe: CMakeFiles/block7.dir/src/ClueBook.cpp.obj
+block7.exe: CMakeFiles/block7.dir/src/Renderer.cpp.obj
+block7.exe: CMakeFiles/block7.dir/src/Ui.cpp.obj
 block7.exe: CMakeFiles/block7.dir/build.make
 block7.exe: _deps/raylib-build/raylib/libraylib.a
 block7.exe: CMakeFiles/block7.dir/linkLibs.rsp
 block7.exe: CMakeFiles/block7.dir/objects1.rsp
 block7.exe: CMakeFiles/block7.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable block7.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Abduhoo_University\SEMESTER_3\projects\Detective_game\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable block7.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\block7.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
