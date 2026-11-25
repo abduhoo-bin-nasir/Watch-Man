@@ -21,6 +21,8 @@
 struct SpriteArt { int w = 0, h = 0; vector<char> c; vector<int8_t> s; };   // colour key + shade (-1 dark, 0, +1 light) per pixel
 struct SpriteSet { SpriteArt front, back, side; };
 const SpriteSet& spriteSet(int art);                                         // the three views of a design
+constexpr int SPRITE_VIEWS = 16;                                            // directions each design is pre-rendered from
+const SpriteArt& spriteFrame(int art, int k);                               // the 3D model of a design seen from direction k (0 = from the front, turning one way)
 bool spriteColor(char key, RGB main, RGB acc, RGB& out);                    // colour key -> colour (main/accent come from the character)
 
 // ---------------------------------------------------------------- the cast (CharacterArt.cpp)

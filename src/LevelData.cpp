@@ -88,11 +88,15 @@ BuildingDef designBuilding() {
         {"scarf", 0, {17.5f, 1.5f}, {{17.5f, 1.5f}, {17.5f, 13.5f}, {1.5f, 13.5f}, {1.5f, 1.5f}}, 0.8f, 0},
         {"cat", 0, {4.5f, 13.5f}, {{4.5f, 13.5f}, {11.5f, 13.5f}}, 0.5f, 0},
         {"pavel", 1, {17.5f, 9.5f}, {}, 0, 3.14159265f},
-        {"tenant", 1, {3.0f, 13.5f}, {}, 0, -1.5707963f}};
+        {"tenant", 1, {3.0f, 13.5f}, {}, 0, -1.5707963f},
+        {"dasha", 0, {1.25f, 4.6f}, {}, 0, 0},                 // waits by the lift doors, talking to nobody
+        {"lev", 1, {11.5f, 1.35f}, {}, 0, -1.5707963f}};       // stares at the rain through the north window
 
     // ------------------------------------------------------------------ who lives behind which door: they answer when you knock
     // {id, floor, door number (1 = apartment x01)}
-    b.homes = {{"volkova", 0, 1}, {"gromov", 0, 2}, {"misha", 0, 4}, {"petrova", 0, 7}};
+    b.homes = {{"volkova", 0, 1}, {"gromov", 0, 2}, {"misha", 0, 4}, {"petrova", 0, 7}, {"fedorov", 0, 8},
+               {"tamara", 1, 1}, {"kolya", 1, 2}, {"beketov", 1, 4}, {"zoya", 1, 6}};
+    // doors that stay empty on purpose (peephole rooms later): 103, 105 downstairs; 203, 205, 207, 208 upstairs
 
     // ------------------------------------------------------------------ props (no characters): {art, floor, tile position, height, colour, facing}
     const RGB wood{150, 112, 76};

@@ -406,12 +406,120 @@ const vector<string> JANITOR_SIDE = {
     ".YYBBBBBBBBB....",
     "................"};
 
+const vector<string> WOMAN_FRONT = {
+    "..................",
+    ".....TTTTTTTT.....",
+    "....TTTTTTTTTT....",
+    "....TTTTTTTTTT....",
+    "....TTSSSSSSTT....",
+    "....TTSeSSeSTT....",
+    "....TTSSSSSSTT....",
+    "....TTSSnnSSTT....",
+    "....TTTSSSSTTT....",
+    ".....TTRRRRTT.....",
+    "....TTCRRRRCTT....",
+    "...TCCCCRRCCCCT...",
+    "..CCCCCCRRCCCCCC..",
+    "..CCCCCCRRCCCCCC..",
+    "..CCCCCCyCCCCCCC..",
+    "..CCCCCCCCCCCCCC..",
+    "..CCRRRRRRRRRRCC..",
+    "..CCCCCCCCCCCCCC..",
+    "..CCCCCCoCCCCCCC..",
+    "..CCCCCCoCCCCCCC..",
+    "..SSCCCCoCCCCCSS..",
+    "..SSCCCCoCCCCCSS..",
+    ".CCCCCCCoCCCCCCCC.",
+    ".CCCCCCCoCCCCCCCC.",
+    ".CCCCCCCoCCCCCCCC.",
+    ".QQQQQQQoQQQQQQQQ.",
+    ".QQQQQQQQQQQQQQQQ.",
+    "..QQQQQQQQQQQQQQ..",
+    ".....ZZZ..ZZZ.....",
+    ".....ZZZ..ZZZ.....",
+    ".....ZZZ..ZZZ.....",
+    ".....ZZZ..ZZZ.....",
+    "....BBBB..BBBB....",
+    ".................."};
+
+const vector<string> WOMAN_BACK = {
+    "..................",
+    ".....TTTTTTTT.....",
+    "....TTTTTTTTTT....",
+    "....TTTTTTTTTT....",
+    "....TTTTTTTTTT....",
+    "....TTTTTTTTTT....",
+    "....TTTTTTTTTT....",
+    "....TTTTTTTTTT....",
+    "....TTTTTTTTTT....",
+    "....TTTTTTTTTT....",
+    "....TTCRRRRCTT....",
+    "...TCCCCRRCCCCT...",
+    "..CCCCCCRRCCCCCC..",
+    "..CCCCCCRRCCCCCC..",
+    "..CCCCCCCCCCCCCC..",
+    "..CCCCCCCCCCCCCC..",
+    "..CCRRRRRRRRRRCC..",
+    "..CCCCCCCCCCCCCC..",
+    "..CCCCCCoCCCCCCC..",
+    "..CCCCCCoCCCCCCC..",
+    "..SSCCCCoCCCCCSS..",
+    "..SSCCCCoCCCCCSS..",
+    ".CCCCCCCoCCCCCCCC.",
+    ".CCCCCCCoCCCCCCCC.",
+    ".CCCCCCCoCCCCCCCC.",
+    ".QQQQQQQoQQQQQQQQ.",
+    ".QQQQQQQQQQQQQQQQ.",
+    "..QQQQQQQQQQQQQQ..",
+    ".....ZZZ..ZZZ.....",
+    ".....ZZZ..ZZZ.....",
+    ".....ZZZ..ZZZ.....",
+    ".....ZZZ..ZZZ.....",
+    "....BBBB..BBBB....",
+    ".................."};
+
+const vector<string> WOMAN_SIDE = {
+    "..............",
+    "...TTTTTTTT...",
+    "...TTTTTTTT...",
+    "...TTTTTTTT...",
+    "...TTTTTTTT...",
+    "...TTTTTTTT...",
+    "....SSSTTT....",
+    "....SeSTTT....",
+    "...SSSSTTT....",
+    "....SSSTTTT...",
+    "...RRRRRRTT...",
+    "...CCCCCCCTT..",
+    "...CCCCCCCCT..",
+    "...CCCCCCCRR..",
+    "...CCCCCCCRR..",
+    "...CCCCCCCRR..",
+    "...CCCCCCCRR..",
+    "...CCCCCCCRR..",
+    "...CCCCCCCRR..",
+    "...CCCCCCCRR..",
+    "...CCSSSSCC...",
+    "...CCSSSSCC...",
+    "..CCCCCCCCCC..",
+    "..CCCCCCCCCC..",
+    "..CCCCCCCCCC..",
+    "..QQQQQQQQQQ..",
+    "..QQQQQQQQQQ..",
+    "...QQQQQQQQ...",
+    "....ZZZZZZ....",
+    "....ZZZZZZ....",
+    "....ZZZZZZ....",
+    "....ZZZZZZ....",
+    "..BBBBBBBBB...",
+    ".............."};
+
 }  // namespace
 
 // ================================================================== the machinery (no need to edit below this line)
 namespace {
 
-SpriteArt finishArt(const vector<string>& rows) {
+SpriteArt shadeArt(const vector<string>& rows) {          // colour keys + edge shading, no outline yet
     SpriteArt a;
     a.h = (int)rows.size(); a.w = (int)rows[0].size();
     a.c.assign((size_t)a.w * a.h, ' '); a.s.assign((size_t)a.w * a.h, 0);
@@ -431,7 +539,11 @@ SpriteArt finishArt(const vector<string>& rows) {
             bool light = key(x - 1, y) == ' ' || key(x, y - 1) == ' ';     // silhouette edge facing the light
             a.s[i] = shadow ? -1 : (light ? 1 : 0);
         }
-    vector<char> src = a.c;                                       // outline: empty pixels touching a filled one
+    return a;
+}
+
+void addOutline(SpriteArt& a) {                                   // outline: empty pixels touching a filled one
+    vector<char> src = a.c;
     for (int y = 0; y < a.h; y++)
         for (int x = 0; x < a.w; x++) {
             size_t i = (size_t)y * a.w + x;
@@ -439,10 +551,80 @@ SpriteArt finishArt(const vector<string>& rows) {
             bool nb = (x > 0 && src[i - 1] != ' ') || (x < a.w - 1 && src[i + 1] != ' ') || (y > 0 && src[i - a.w] != ' ') || (y < a.h - 1 && src[i + a.w] != ' ');
             if (nb) a.c[i] = 'O';
         }
-    return a;
 }
 
+SpriteArt finishArt(const vector<string>& rows) { SpriteArt a = shadeArt(rows); addOutline(a); return a; }
+
 SpriteSet makeSet(const vector<string>& f, const vector<string>& b, const vector<string>& s) { return {finishArt(f), finishArt(b), finishArt(s)}; }
+
+
+// ---------------------------------------------------------------- 3D: every design is carved into a small voxel model
+// The three flat views are enough to make a solid: a voxel exists where the FRONT silhouette (column ix, row iy) and the
+// SIDE silhouette (column iz, row iy) both have a pixel. (This is "visual hull" carving: the model is the largest solid
+// that looks right from the front and from the side.) iz = 0 is the front of the character, the side design faces left,
+// so side column 0 is the front. The model is then rendered once, at load time, from SPRITE_VIEWS directions around it
+// into ordinary SpriteArt frames, so drawing a character in the game stays one cheap camera-facing sprite.
+struct VoxModel {
+    int W = 0, H = 0, D = 0;
+    SpriteArt front, back, side;                  // side already resampled to H rows
+    bool solid(int ix, int iy, int iz) const {
+        if (ix < 0 || iy < 0 || iz < 0 || ix >= W || iy >= H || iz >= D) return false;
+        return front.c[(size_t)iy * W + ix] != ' ' && side.c[(size_t)iy * D + iz] != ' ';
+    }
+};
+
+SpriteArt resampleRows(const SpriteArt& a, int h) {              // nearest-neighbour, in case a view has a different height
+    if (a.h == h) return a;
+    SpriteArt r; r.w = a.w; r.h = h; r.c.assign((size_t)r.w * h, ' '); r.s.assign((size_t)r.w * h, 0);
+    for (int y = 0; y < h; y++)
+        for (int x = 0; x < a.w; x++) {
+            size_t src = (size_t)std::clamp(y * a.h / h, 0, a.h - 1) * a.w + x, dst = (size_t)y * a.w + x;
+            r.c[dst] = a.c[src]; r.s[dst] = a.s[src];
+        }
+    return r;
+}
+
+SpriteArt renderVoxelView(const VoxModel& m, int k) {
+    const float PI2 = 6.2831853f;
+    float phi = PI2 * (float)k / (float)SPRITE_VIEWS;
+    float rx = std::cos(phi), rz = std::sin(phi);       // screen-right in (ix, iz) space
+    float lx = -std::sin(phi), lz = std::cos(phi);      // looking direction
+    int FW = (int)std::ceil(std::sqrt((float)(m.W * m.W + m.D * m.D))) + 2;
+    if (FW % 2) FW++;                                   // even: the character stands exactly in the middle
+    SpriteArt out; out.w = FW; out.h = m.H; out.c.assign((size_t)FW * m.H, ' '); out.s.assign((size_t)FW * m.H, 0);
+    float cx = m.W * 0.5f, cz = m.D * 0.5f, far = (float)(m.W + m.D);
+    for (int j = 0; j < FW; j++) {
+        float off = (j + 0.5f) - FW * 0.5f;
+        float ox = cx + rx * off - lx * far, oz = cz + rz * off - lz * far;     // start well outside the model
+        int ix = (int)std::floor(ox), iz = (int)std::floor(oz);
+        int sx = lx > 0 ? 1 : -1, sz = lz > 0 ? 1 : -1;
+        float tdx = std::fabs(lx) < 1e-6f ? 1e30f : std::fabs(1.0f / lx), tdz = std::fabs(lz) < 1e-6f ? 1e30f : std::fabs(1.0f / lz);
+        float tx = std::fabs(lx) < 1e-6f ? 1e30f : (lx > 0 ? (ix + 1 - ox) : (ox - ix)) * tdx;
+        float tz = std::fabs(lz) < 1e-6f ? 1e30f : (lz > 0 ? (iz + 1 - oz) : (oz - iz)) * tdz;
+        int nx = 0, nz = 0;                                 // normal of the face we entered through
+        vector<char> done((size_t)m.H, 0);
+        for (int step = 0; step < 4 * (m.W + m.D) + 8; step++) {
+            for (int iy = 0; iy < m.H; iy++) {
+                if (done[(size_t)iy] || !m.solid(ix, iy, iz)) continue;
+                done[(size_t)iy] = 1;
+                char key; int8_t sh;
+                size_t fi = (size_t)iy * m.W + ix;
+                if (nz < 0 || (nx == 0 && nz == 0)) { key = m.front.c[fi]; sh = m.front.s[fi]; }           // looking at the front of the character
+                else if (nz > 0) {                                                                         // looking at the back
+                    size_t bi = (size_t)iy * m.W + (m.W - 1 - ix);
+                    if (m.back.c[bi] != ' ') { key = m.back.c[bi]; sh = m.back.s[bi]; } else { key = m.front.c[fi]; sh = -1; }
+                } else { size_t si = (size_t)iy * m.D + iz; key = m.side.c[si]; sh = m.side.s[si]; }      // a flank
+                float facing = nx * rx + nz * rz;                                                          // face turned toward the light (screen-left) or away
+                int s2 = sh + (facing < -0.3f ? 1 : facing > 0.3f ? -1 : 0);
+                size_t oi = (size_t)iy * FW + j;
+                out.c[oi] = key; out.s[oi] = (int8_t)std::clamp(s2, -1, 1);
+            }
+            if (tx < tz) { ix += sx; tx += tdx; nx = -sx; nz = 0; } else { iz += sz; tz += tdz; nz = -sz; nx = 0; }
+        }
+    }
+    addOutline(out);
+    return out;
+}
 
 }  // namespace
 
@@ -454,8 +636,29 @@ const SpriteSet& spriteSet(int art) {
         sets.push_back(makeSet(CAT_FRONT, CAT_BACK, CAT_SIDE));
         { SpriteArt c = finishArt(CRATE); sets.push_back({c, c, c}); }
         sets.push_back(makeSet(JANITOR_FRONT, JANITOR_BACK, JANITOR_SIDE));
+        sets.push_back(makeSet(WOMAN_FRONT, WOMAN_BACK, WOMAN_SIDE));
     }
     return sets[(size_t)std::clamp(art, 0, ART_COUNT - 1)];
+}
+
+const SpriteArt& spriteFrame(int art, int k) {
+    static vector<vector<SpriteArt>> frames;
+    if (frames.empty()) {
+        frames.resize(ART_COUNT);
+        const vector<string>* v[ART_COUNT][3] = {{&MAN_FRONT, &MAN_BACK, &MAN_SIDE}, {&OLD_FRONT, &OLD_BACK, &OLD_SIDE}, {&CAT_FRONT, &CAT_BACK, &CAT_SIDE},
+                                                  {&CRATE, &CRATE, &CRATE}, {&JANITOR_FRONT, &JANITOR_BACK, &JANITOR_SIDE}, {&WOMAN_FRONT, &WOMAN_BACK, &WOMAN_SIDE}};   // order = enum ArtId
+        for (int a = 0; a < ART_COUNT; a++) {
+            VoxModel m;
+            m.front = shadeArt(*v[a][0]);
+            m.W = m.front.w; m.H = m.front.h;
+            m.back = resampleRows(shadeArt(*v[a][1]), m.H);
+            m.side = resampleRows(shadeArt(*v[a][2]), m.H);
+            m.D = m.side.w;
+            if (m.back.w != m.W) m.back = m.front;               // a back view of another width cannot be mapped: fall back to the front
+            for (int i = 0; i < SPRITE_VIEWS; i++) frames[(size_t)a].push_back(renderVoxelView(m, i));
+        }
+    }
+    return frames[(size_t)std::clamp(art, 0, ART_COUNT - 1)][(size_t)((k % SPRITE_VIEWS + SPRITE_VIEWS) % SPRITE_VIEWS)];
 }
 
 bool spriteColor(char ch, RGB main, RGB acc, RGB& o) {
@@ -495,6 +698,14 @@ const vector<CastDef>& castList() {
         {"scarf", "Man in red scarf", "Hallway. Big, wool scarf. Walks the ring.", "Talk to", ART_MAN, {64, 68, 78}, {196, 52, 40}, 0.95f},
         {"cat", "Boris", "Hallway. Tabby with a red collar.", "Crouch by", ART_CAT, {220, 140, 60}, {200, 60, 60}, 0.34f},
         {"pavel", "Pavel", "Second floor. Janitor. Keys and a broom.", "Talk to", ART_JANITOR, {78, 112, 140}, {226, 170, 60}, 0.90f},
-        {"tenant", "Old tenant", "Second floor. Complains about the lift.", "Talk to", ART_OLD, coat, shawl, 0.80f}};
+        {"tenant", "Old tenant", "Second floor. Complains about the lift.", "Talk to", ART_OLD, coat, shawl, 0.80f},
+        // ---- the neighbours who matter less and are more fun
+        {"fedorov", "Colonel Fedorov", "Apt 108. Retired. Plays chess against the radio.", "Talk to", ART_MAN, {96, 104, 84}, {196, 168, 80}, 0.94f},
+        {"dasha", "Dasha", "Ground floor, by the lift. Earbuds. Fake phone calls.", "Talk to", ART_WOMAN, {196, 92, 140}, {240, 220, 90}, 0.80f},
+        {"lev", "Lev", "Second floor. Counts raindrops at the north window.", "Talk to", ART_MAN, {110, 100, 84}, {150, 140, 110}, 0.88f},
+        {"tamara", "Tamara Ilyinichna", "Apt 201. Retired opera singer. Everything is a stage.", "Talk to", ART_WOMAN, {120, 50, 90}, {220, 190, 90}, 0.86f},
+        {"kolya", "Kolya", "Apt 202. Streams to six viewers and a bot.", "Talk to", ART_MAN, {60, 140, 150}, {230, 90, 200}, 0.86f},
+        {"beketov", "Doctor Beketov", "Apt 204. Retired vet. Distrusts your watch.", "Talk to", ART_MAN, {88, 92, 84}, {200, 170, 80}, 0.90f},
+        {"zoya", "Zoya", "Apt 206. Night nurse. Dead on her feet.", "Talk to", ART_WOMAN, {70, 130, 140}, {226, 230, 232}, 0.84f}};
     return cast;
 }

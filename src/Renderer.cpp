@@ -427,7 +427,10 @@ void Renderer::renderColumn(int x, const Cam& c) {
         float hx = c.px + tFar * rx, hy = c.py + tFar * ry;
         float u = frac(nside == 0 ? hy : hx);
         if (nx.type != C_OPEN) {         // solid neighbour: its face fills the rest of the column
-            bool flip = (nside == 0 && rx > 0) || (nside == 1 && ry < 0);
+            // u grows with the world coordinate along the wall. The camera plane is d rotated by +90 degrees, so screen-right
+            // is +y when facing +x and +x when facing -y: u already grows to the right there. Facing -x or +y it grows to
+            // the left and must be reversed. (The opposite test mirrored every door number, knob and lift button.)
+            bool flip = (nside == 0 && rx < 0) || (nside == 1 && ry > 0);
             drawWallRows(c, x, yT, yB, tFar, hx, hy, u, nside, flip, cur, nx);
             zbuf[x] = tFar;
             // an open doorway is a hole in the wall: whoever stands in it must not be hidden by the wall plane
@@ -498,8 +501,9 @@ void Renderer::drawGlows(const Cam& c) {
 
 
 // ---------------------------------------------------------------- billboards (people and props)
-// Every billboard is two crossed vertical planes: one faces along the heading and shows the front or the back
-// (whichever side you are on), the other is perpendicular and shows the side (mirrored from the other side).
+// Every character is a 3D voxel model (see CharacterArt.cpp) that was pre-rendered from SPRITE_VIEWS directions. Per frame
+// we only pick the direction that matches where the camera is relative to the character's heading and draw that frame as
+// one sprite that faces the screen, depth-tested against the wall distance of each column.
 void Renderer::drawBillboards(const Cam& c, const vector<Billboard>& bills) {
     struct Item { const Billboard* s; float ty, tx; int idx; };
     vector<Item> list;
@@ -512,53 +516,40 @@ void Renderer::drawBillboards(const Cam& c, const vector<Billboard>& bills) {
     nearBill = -1;
     for (const Item& it : list) {
         const Billboard& s = *it.s;
-        const SpriteSet& set = spriteSet(s.art);
         float H = s.h * WALL_H;                                              // world height
         float fx = std::cos(s.yaw), fy = std::sin(s.yaw);                    // heading
-        float cxv = c.px - s.x, cyv = c.py - s.y;                            // sprite -> camera
-        bool viewFront = cxv * fx + cyv * fy >= 0;
-        const SpriteArt& A = viewFront ? set.front : set.back;               // plane A: across the heading, front or back
-        const SpriteArt& B = set.side;                                       // plane B: along the heading, the side
-        float hw[2] = {H * A.w / A.h * 0.5f, H * B.w / B.h * 0.5f};
-        float Dx[2] = {fy, fx}, Dy[2] = {-fx, fy};                           // plane directions: A = (fy,-fx), B = (fx,fy)
-        const SpriteArt* art[2] = {&A, &B};
-        float rad = std::max(hw[0], hw[1]);
+        float vx = c.px - s.x, vy = c.py - s.y;                              // sprite -> camera
+        // direction of the camera as seen from the character: 0 = straight in front of it, growing toward the character's left
+        float phi = std::atan2(vx * fy - vy * fx, vx * fx + vy * fy);
+        int k = (int)std::lround(phi / 6.2831853f * (float)SPRITE_VIEWS);
+        const SpriteArt& a = spriteFrame(s.art, k);
+        float hw = H * a.w / a.h * 0.5f;                                     // half width in world units
         bulb = 0;
         float L = lampL(s.x, s.y) + 0.12f + s.lit;
-        float sxc = RW / 2.0f * (1 + it.tx / it.ty), halfPx = rad * RH / std::max(0.25f, it.ty - rad) + 1.0f;
+        float t = it.ty;                                                     // the whole sprite sits at the depth of its centre
+        float sxc = RW / 2.0f * (1 + it.tx / it.ty), halfPx = hw * RH / std::max(0.25f, t) + 1.0f;
         int xa = clampi(std::floor(sxc - halfPx), 0, RW), xb = clampi(std::ceil(sxc + halfPx), 0, RW);
-        float ppx = s.x - c.px, ppy = s.y - c.py;
+        float top = c.hz - (s.floorH + H - c.eye) * RH / t, bot = c.hz - (s.floorH - c.eye) * RH / t;
+        if (bot - top < 0.5f) continue;
+        int ya = clampi(std::floor(top), 0, RH), yb = clampi(std::ceil(bot), 0, RH);
+        float ft = std::max(0.05f, std::exp(-t / 16));
         for (int x = xa; x < xb; x++) {
-            float cs = 2.0f * (x + 0.5f) / RW - 1.0f, rx = c.dx + c.plx * cs, ry = c.dy + c.ply * cs;
-            struct Hit { int pl; float t, u; } hits[2]; int nh = 0;
-            for (int pl = 0; pl < 2; pl++) {
-                float den = rx * Dy[pl] - ry * Dx[pl];
-                if (std::fabs(den) < 1e-5f) continue;
-                float t = (ppx * Dy[pl] - ppy * Dx[pl]) / den, sp = (ppx * ry - ppy * rx) / den;
-                if (t < 0.15f || std::fabs(sp) > hw[pl] || zbuf[x] < t) continue;
-                float u = pl == 0 ? 0.5f + (viewFront ? sp : -sp) / (2 * hw[0]) : 0.5f - sp / (2 * hw[1]);
-                hits[nh++] = {pl, t, u};
-            }
-            if (nh == 2 && hits[0].t < hits[1].t) std::swap(hits[0], hits[1]);   // far plane first
-            for (int k = 0; k < nh; k++) {
-                const Hit& ht = hits[k];
-                const SpriteArt& a = *art[ht.pl];
-                float top = c.hz - (s.floorH + H - c.eye) * RH / ht.t, bot = c.hz - (s.floorH - c.eye) * RH / ht.t;
-                if (bot - top < 0.5f) continue;
-                int u = clampi(ht.u * a.w, 0, a.w - 1);
-                int ya = clampi(std::floor(top), 0, RH), yb = clampi(std::ceil(bot), 0, RH);
-                float ft = std::max(0.05f, std::exp(-ht.t / 16));
-                for (int y = ya; y < yb; y++) {
-                    int v = clampi((y + 0.5f - top) / (bot - top) * a.h, 0, a.h - 1);
-                    size_t ai = (size_t)v * a.w + u;
-                    char ch = a.c[ai];
-                    RGB col;
-                    if (ch == ' ' || !spriteColor(ch, s.main, s.acc, col)) continue;
-                    int8_t sd = a.s[ai];
-                    col = mul(col, sd < 0 ? 0.62f : sd > 0 ? 1.28f : 1.0f);
-                    if (ch == 'F') putPix(x, y, col.r, col.g, col.b, 1.4f, std::max(ft, 0.6f));   // eyes glow
-                    else putPix(x, y, col.r, col.g, col.b, L, ft);
-                }
+            if (zbuf[x] < t) continue;                                       // a wall is in front of it
+            float cs = 2.0f * (x + 0.5f) / RW - 1.0f;
+            float sp = cs * PLANE * t - it.tx * PLANE;                       // sideways offset from the centre of the sprite, world units
+            float uf = 0.5f + sp / (2 * hw);
+            if (uf < 0 || uf >= 1) continue;
+            int u = clampi(uf * a.w, 0, a.w - 1);
+            for (int y = ya; y < yb; y++) {
+                int v = clampi((y + 0.5f - top) / (bot - top) * a.h, 0, a.h - 1);
+                size_t ai = (size_t)v * a.w + u;
+                char ch = a.c[ai];
+                RGB col;
+                if (ch == ' ' || !spriteColor(ch, s.main, s.acc, col)) continue;
+                int8_t sd = a.s[ai];
+                col = mul(col, sd < 0 ? 0.62f : sd > 0 ? 1.28f : 1.0f);
+                if (ch == 'F') putPix(x, y, col.r, col.g, col.b, 1.4f, std::max(ft, 0.6f));   // eyes glow
+                else putPix(x, y, col.r, col.g, col.b, L, ft);
             }
         }
         if (s.who && it.ty < 4.8f && std::fabs(it.tx / it.ty) < 0.3f && it.ty < zbuf[RW / 2] + 0.1f) nearBill = it.idx;   // the person you are looking at

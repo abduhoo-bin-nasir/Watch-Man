@@ -75,15 +75,74 @@ Script scriptFor(const string& id) {
         s.greet = "Is that the police? About time.";
         s.impression = "Has opinions about the lift.";
         s.topics = {T("Everything all right up here?", "The lift is switched off at ten every night. The caretaker's economy drive. After that we all climb the stairs like goats.", "elev")};
+    } else if (id == "fedorov") {
+        s.greet = "State your business. Briefly. I am mid-game and losing to a radio.";
+        s.again = "Still losing, Detective.";
+        s.openLine = "A chessboard clacks shut. The door opens in two stages.";
+        s.impression = "Fights a radio at chess. The radio is winning.";
+        s.topics = {T("Who are you playing against?", "The radio. It announces the moves. Badly. Some nights it cheats and I say nothing. A good officer knows which battles to lose.", "", {}, "Plays chess against the radio."),
+                    T("Hear anything last night?", "Two in the morning, a disturbance down the hall. I assumed domestic. In my day we called that Tuesday.", "", {}, "Heard 'a disturbance' at 2 a.m. Shrugged."),
+                    T("What do you make of the new watches?", "A machine on the wrist that talks back? I served forty years. I know insubordination when I hear it.", "", {}, "Calls the AI watch insubordinate."),
+                    T("Any advice for a detective?", "Control the centre. Sacrifice nothing you cannot afford. And never play on another man's board.")};
+    } else if (id == "dasha") {
+        s.greet = "One sec - no, a real cop, I'll call you back. Hi!";
+        s.again = "Back already? Dramatic.";
+        s.impression = "Teen. Permanently on a call that is not real.";
+        s.topics = {T("Who are you talking to?", "Nobody. It is a recording. If I look busy nobody asks me to take out the rubbish.", "", {}, "Fake phone calls to dodge chores."),
+                    T("See anything last night?", "I sleep with noise-cancelling on. Block 7 is much easier to live in at minus forty decibels.", "", {}, "Noise-cancelling at night. Useless witness."),
+                    T("What do you think of the watch AI?", "Mine tells me to drink water. Yours swears at you? Honestly, relatable.")};
+    } else if (id == "lev") {
+        s.greet = "Eleven thousand, two hundred and six. ... No. Hush. You made me lose count.";
+        s.again = "Where was I? Never mind. Forty million is a good round number.";
+        s.impression = "Watches the rain. Keeps a tally.";
+        s.topics = {T("What are you counting?", "Raindrops on this pane. Started in March. If I stop, who will know how many there were?", "", {}, "Counting raindrops on the north window."),
+                    T("Do you see much at night?", "At night I count stars. There are none. Block 7 has a very short count.", "", {}, "Counts stars at night. Stars: zero."),
+                    T("Does the window ever open?", "Sealed in 2026. The only honest thing in the building. It lets nothing in and nothing out.")};
+    } else if (id == "tamara") {
+        s.greet = "Darling! Finally, an audience.";
+        s.again = "An encore! I knew it.";
+        s.openLine = "A scale - do, re, mi - breaks off mid-note. The door opens with a flourish.";
+        s.impression = "Retired opera singer. Everything is a stage.";
+        s.topics = {T("Did you hear anything last night?", "I sang Tosca in the bath at midnight. Anyone screaming after that was a critic.", "", {}, "Sings in the bath at midnight."),
+                    T("About the man in the red scarf...", "Igor? Heavy tread, light tipper. He once clapped at my Aida. Out of time, but he clapped.", "", {"scarf"}, "Igor once clapped at her Aida."),
+                    T("How do you cope without the lift at night?", "It switches off at ten like a bad curtain call. I take the stairs. Dramatically.")};
+    } else if (id == "kolya") {
+        s.greet = "Chat, say hi to the police. ... No, you cannot be on stream, sorry officer.";
+        s.again = "Chat says you came back. Chat is never wrong.";
+        s.openLine = "Chair wheels. A ring light clicks off. The door opens.";
+        s.impression = "Streams to an invisible crowd.";
+        s.topics = {T("Were you streaming last night?", "Until four. Eleven viewers, one bot. Ten of them could vouch for me but they are in Brazil.", "", {}, "Streams until 4 a.m."),
+                    T("Hear anything through the floor?", "Chat says there was a thump around two. I called it lag. Was it not lag? Should I be scared?", "", {}, "Heard a thump about 2 a.m. Called it lag."),
+                    T("What do you stream?", "Walkthroughs of this building. 'Block 7, no commentary.' Surprisingly popular. Six viewers.")};
+    } else if (id == "beketov") {
+        s.greet = "Show me your hands. Now the wrist. ... That watch is listening.";
+        s.again = "Still wearing it? Your funeral.";
+        s.openLine = "Three locks, a pause, a fourth lock. The door opens on a chain.";
+        s.impression = "Convinced every watch in Block 7 is listening.";
+        s.topics = {T("Why do you distrust my watch?", "It has a microphone, a speaker, and opinions. Those are the three ingredients of a hostage taker.", "", {}, "Thinks the watch is a hostage taker."),
+                    T("Did you see anything last night?", "I saw nothing. I put foil over the peephole. Peepholes are how they get your face.", "", {}, "Foil over the peephole. Saw nothing."),
+                    T("Any advice for the case?", "Write everything on paper. Paper has never been hacked. Paper once caught fire, but it was honest about it.", "", {}, "Says: keep your notes on paper.")};
+    } else if (id == "zoya") {
+        s.greet = "I'm sleeping. Whatever it is, it can be whispered.";
+        s.again = "Still awake. Unfortunately.";
+        s.openLine = "A yawn through the wood. The door opens a crack, then a little more.";
+        s.impression = "Night-shift nurse. Dead on her feet.";
+        s.topics = {T("When did you get home last night?", "Seven this morning, straight off the ward. The lift was off, so the stairs. Wet and muddy, as always.", "", {}, "Home at 7 a.m. Stairs: wet, muddy."),
+                    T("Seen Anton lately?", "He waved at the end of the month. Looked grey. I told him to see a doctor. He told me to see a better one.", "", {}, "Anton looked grey lately."),
+                    T("Tips for a long shift?", "Sleep when you can. Eat what you find. Never say 'it will be quiet tonight' out loud.")};
     }
     return s;
 }
 
-// What you hear when you knock and nobody opens, by door number (1..8). Edit freely.
-const char* noAnswerLine(int /*floor*/, int door) {
-    static const char* L[8] = {"A chain rattles. No one answers.", "A TV drones behind the door.", "A tired voice: \"Night shift. Not home.\"",
+// What you hear when you knock and nobody opens, by floor and door number (1..8). Edit freely.
+const char* noAnswerLine(int floor, int door) {
+    static const char* G[8] = {"A chain rattles. No one answers.", "A TV drones behind the door.", "A tired voice: \"Night shift. Not home.\"",
                                "A boy through the gap: \"Big guy came by. Red scarf.\"", "Mail piles up on the mat.",
                                "Crime scene tape across the frame. A muddy boot print by the hinge.", "Boiled cabbage smell. The door stays shut.",
                                "A radio plays softly. No answer."};
-    return L[std::clamp(door, 1, 8) - 1];
+    static const char* U[8] = {"Somebody inside is humming opera. No answer.", "A keyboard clatters, then stops. Nobody comes.", "Silence. Not even a clock ticking.",
+                               "Three locks click, then nothing.", "A neighbour coughs somewhere else. Nobody here.", "A fan hums. Nobody comes.",
+                               "A fridge hums. Nothing else.", "Faint piano exercises from another flat. This door stays shut."};
+    int i = std::clamp(door, 1, 8) - 1;
+    return floor == 0 ? G[i] : U[i];
 }

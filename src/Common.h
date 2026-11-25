@@ -45,7 +45,7 @@ inline int clampi(float f, int lo, int hi) {   // NaN-safe float -> clamped int
 }
 
 // ---- which pixel-art design a character or prop uses (the designs live in CharacterArt.cpp)
-enum ArtId { ART_MAN, ART_OLD, ART_CAT, ART_CRATE, ART_JANITOR, ART_COUNT };
+enum ArtId { ART_MAN, ART_OLD, ART_CAT, ART_CRATE, ART_JANITOR, ART_WOMAN, ART_COUNT };
 
 // ---- one frame of player input, gathered by Game::run() and consumed by Game::update()
 struct Input {
