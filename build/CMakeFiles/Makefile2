@@ -65,12 +65,14 @@ CMAKE_BINARY_DIR = /home/abduhoo/University/Projects/Watch-Man/build
 # The main recursive "all" target.
 all: CMakeFiles/watchman_core.dir/all
 all: CMakeFiles/Watch-Man.dir/all
+all: CMakeFiles/export_sounds.dir/all
 all: CMakeFiles/logic_test.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/watchman_core.dir/codegen
 codegen: CMakeFiles/Watch-Man.dir/codegen
+codegen: CMakeFiles/export_sounds.dir/codegen
 codegen: CMakeFiles/logic_test.dir/codegen
 .PHONY : codegen
 
@@ -81,6 +83,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/watchman_core.dir/clean
 clean: CMakeFiles/Watch-Man.dir/clean
+clean: CMakeFiles/export_sounds.dir/clean
 clean: CMakeFiles/logic_test.dir/clean
 .PHONY : clean
 
@@ -91,12 +94,12 @@ clean: CMakeFiles/logic_test.dir/clean
 CMakeFiles/watchman_core.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target watchman_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 "Built target watchman_core"
 .PHONY : CMakeFiles/watchman_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/watchman_core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/watchman_core.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles 0
 .PHONY : CMakeFiles/watchman_core.dir/rule
@@ -108,7 +111,7 @@ watchman_core: CMakeFiles/watchman_core.dir/rule
 # codegen rule for target.
 CMakeFiles/watchman_core.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Finished codegen for target watchman_core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 "Finished codegen for target watchman_core"
 .PHONY : CMakeFiles/watchman_core.dir/codegen
 
 # clean rule for target.
@@ -128,7 +131,7 @@ CMakeFiles/Watch-Man.dir/all: CMakeFiles/watchman_core.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Watch-Man.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Watch-Man.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles 0
 .PHONY : CMakeFiles/Watch-Man.dir/rule
@@ -149,18 +152,50 @@ CMakeFiles/Watch-Man.dir/clean:
 .PHONY : CMakeFiles/Watch-Man.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/export_sounds.dir
+
+# All Build rule for target.
+CMakeFiles/export_sounds.dir/all: CMakeFiles/watchman_core.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/export_sounds.dir/build.make CMakeFiles/export_sounds.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/export_sounds.dir/build.make CMakeFiles/export_sounds.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=3,4 "Built target export_sounds"
+.PHONY : CMakeFiles/export_sounds.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/export_sounds.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles 17
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/export_sounds.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles 0
+.PHONY : CMakeFiles/export_sounds.dir/rule
+
+# Convenience name for target.
+export_sounds: CMakeFiles/export_sounds.dir/rule
+.PHONY : export_sounds
+
+# codegen rule for target.
+CMakeFiles/export_sounds.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/export_sounds.dir/build.make CMakeFiles/export_sounds.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=3,4 "Finished codegen for target export_sounds"
+.PHONY : CMakeFiles/export_sounds.dir/codegen
+
+# clean rule for target.
+CMakeFiles/export_sounds.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/export_sounds.dir/build.make CMakeFiles/export_sounds.dir/clean
+.PHONY : CMakeFiles/export_sounds.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/logic_test.dir
 
 # All Build rule for target.
 CMakeFiles/logic_test.dir/all: CMakeFiles/watchman_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=3,4 "Built target logic_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=5,6 "Built target logic_test"
 .PHONY : CMakeFiles/logic_test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/logic_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/logic_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles 0
 .PHONY : CMakeFiles/logic_test.dir/rule
@@ -172,7 +207,7 @@ logic_test: CMakeFiles/logic_test.dir/rule
 # codegen rule for target.
 CMakeFiles/logic_test.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=3,4 "Finished codegen for target logic_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=5,6 "Finished codegen for target logic_test"
 .PHONY : CMakeFiles/logic_test.dir/codegen
 
 # clean rule for target.

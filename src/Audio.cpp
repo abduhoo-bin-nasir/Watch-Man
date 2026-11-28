@@ -1,5 +1,6 @@
 // Audio.cpp - the mixer, the sound manager and the sound-card glue. See Audio.h for the big picture.
 #include "Audio.h"
+#include "AudioFiles.h"
 #include <algorithm>
 #include <cmath>
 #include <raylib.h>
@@ -94,7 +95,8 @@ void Audio::closeDevice() {
 
 Audio::Audio() = default;
 Audio::~Audio() { if (builder.joinable()) builder.join(); }
-void Audio::buildAsync() { if (!builder.joinable() && !ready()) builder = std::thread([this] { sounds = generateSounds(); built.store(true, std::memory_order_release); }); }
+void Audio::buildAsync() { if (!builder.joinable() && !ready()) builder = std::thread([this] { sounds = generateSounds(); loadFiles(); built.store(true, std::memory_order_release); }); }
+void Audio::loadFiles() { if (!useFiles) return; for (const std::string& l : loadSoundFiles(sounds, findAudioRoot())) TraceLog(LOG_INFO, "%s", l.c_str()); }
 void Audio::buildNow() { if (!ready()) { sounds = generateSounds(); built.store(true, std::memory_order_release); } }
 void Audio::toggleMute() { mute = !mute; mixer.setMaster(mute ? 0.0f : 0.9f); }
 

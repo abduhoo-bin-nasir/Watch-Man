@@ -155,5 +155,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/watchman_core.dir/DependInfo.cmake"
   "CMakeFiles/Watch-Man.dir/DependInfo.cmake"
+  "CMakeFiles/export_sounds.dir/DependInfo.cmake"
   "CMakeFiles/logic_test.dir/DependInfo.cmake"
   )

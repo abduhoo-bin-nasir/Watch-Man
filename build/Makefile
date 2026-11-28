@@ -153,6 +153,19 @@ Watch-Man/fast:
 .PHONY : Watch-Man/fast
 
 #=============================================================================
+# Target rules for targets named export_sounds
+
+# Build rule for target.
+export_sounds: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 export_sounds
+.PHONY : export_sounds
+
+# fast build rule for target.
+export_sounds/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/export_sounds.dir/build.make CMakeFiles/export_sounds.dir/build
+.PHONY : export_sounds/fast
+
+#=============================================================================
 # Target rules for targets named logic_test
 
 # Build rule for target.
@@ -212,6 +225,30 @@ src/AudioData.s: src/AudioData.cpp.s
 src/AudioData.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/AudioData.cpp.s
 .PHONY : src/AudioData.cpp.s
+
+src/AudioFiles.o: src/AudioFiles.cpp.o
+.PHONY : src/AudioFiles.o
+
+# target to build an object file
+src/AudioFiles.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o
+.PHONY : src/AudioFiles.cpp.o
+
+src/AudioFiles.i: src/AudioFiles.cpp.i
+.PHONY : src/AudioFiles.i
+
+# target to preprocess a source file
+src/AudioFiles.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.i
+.PHONY : src/AudioFiles.cpp.i
+
+src/AudioFiles.s: src/AudioFiles.cpp.s
+.PHONY : src/AudioFiles.s
+
+# target to generate assembly for a file
+src/AudioFiles.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.s
+.PHONY : src/AudioFiles.cpp.s
 
 src/CharacterArt.o: src/CharacterArt.cpp.o
 .PHONY : src/CharacterArt.o
@@ -525,6 +562,30 @@ tests/logic_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/tests/logic_test.cpp.s
 .PHONY : tests/logic_test.cpp.s
 
+tools/export_sounds.o: tools/export_sounds.cpp.o
+.PHONY : tools/export_sounds.o
+
+# target to build an object file
+tools/export_sounds.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/export_sounds.dir/build.make CMakeFiles/export_sounds.dir/tools/export_sounds.cpp.o
+.PHONY : tools/export_sounds.cpp.o
+
+tools/export_sounds.i: tools/export_sounds.cpp.i
+.PHONY : tools/export_sounds.i
+
+# target to preprocess a source file
+tools/export_sounds.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/export_sounds.dir/build.make CMakeFiles/export_sounds.dir/tools/export_sounds.cpp.i
+.PHONY : tools/export_sounds.cpp.i
+
+tools/export_sounds.s: tools/export_sounds.cpp.s
+.PHONY : tools/export_sounds.s
+
+# target to generate assembly for a file
+tools/export_sounds.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/export_sounds.dir/build.make CMakeFiles/export_sounds.dir/tools/export_sounds.cpp.s
+.PHONY : tools/export_sounds.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -535,6 +596,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... Watch-Man"
+	@echo "... export_sounds"
 	@echo "... logic_test"
 	@echo "... watchman_core"
 	@echo "... src/Audio.o"
@@ -543,6 +605,9 @@ help:
 	@echo "... src/AudioData.o"
 	@echo "... src/AudioData.i"
 	@echo "... src/AudioData.s"
+	@echo "... src/AudioFiles.o"
+	@echo "... src/AudioFiles.i"
+	@echo "... src/AudioFiles.s"
 	@echo "... src/CharacterArt.o"
 	@echo "... src/CharacterArt.i"
 	@echo "... src/CharacterArt.s"
@@ -582,6 +647,9 @@ help:
 	@echo "... tests/logic_test.o"
 	@echo "... tests/logic_test.i"
 	@echo "... tests/logic_test.s"
+	@echo "... tools/export_sounds.o"
+	@echo "... tools/export_sounds.i"
+	@echo "... tools/export_sounds.s"
 .PHONY : help
 
 

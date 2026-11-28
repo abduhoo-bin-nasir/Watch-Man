@@ -67,6 +67,12 @@
 },
 {
   "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/AudioFiles.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/AudioFiles.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
   "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/Renderer.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp",
   "file": "/home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp",
   "output": "CMakeFiles/watchman_core.dir/src/Renderer.cpp.o"
@@ -82,6 +88,12 @@
   "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/Watch-Man.dir/src/main.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/main.cpp",
   "file": "/home/abduhoo/University/Projects/Watch-Man/src/main.cpp",
   "output": "CMakeFiles/Watch-Man.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/export_sounds.dir/tools/export_sounds.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/tools/export_sounds.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/tools/export_sounds.cpp",
+  "output": "CMakeFiles/export_sounds.dir/tools/export_sounds.cpp.o"
 },
 {
   "directory": "/home/abduhoo/University/Projects/Watch-Man/build",

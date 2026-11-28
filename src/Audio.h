@@ -93,6 +93,7 @@ private:
     void shotFlat(const AudioScene& s, const Buf& b, float gain, float pan, float cut, float rate);
     void footstep(const AudioScene& s, const Level& lvl, float x, float y, int floor, bool isListener, bool cat);
     void startVoices();
+    void loadFiles();                                         // sound files in assets/audio replace generated sounds (AudioFiles.h)
     void learnWorld(const Building& b);                       // window and door positions, once
     int pick(int n) { return (int)(rng() % (uint32_t)n); }
     float randf(float a, float b) { return a + (b - a) * (float)(rng() & 0xFFFF) / 65535.0f; }
@@ -101,6 +102,7 @@ private:
     Sounds sounds;
     std::atomic<bool> built{false};
     std::thread builder;
+    bool useFiles = true;
     bool voicesStarted = false, worldLearned = false, mute = false, firstFrame = true;
     uint32_t seed = 2463534242u;
     struct Voices { int rainWin = -1, rainOpen = -1, wind = -1, musicHall = -1, musicRoof = -1, buzz = -1, purr = -1, lift = -1; } vo;

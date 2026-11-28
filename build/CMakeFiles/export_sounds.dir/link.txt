@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/export_sounds.dir/link.d CMakeFiles/export_sounds.dir/tools/export_sounds.cpp.o -o export_sounds  libwatchman_core.a /usr/lib64/libraylib.so -L/usr/lib64 -lraylib

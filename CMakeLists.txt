@@ -32,7 +32,7 @@ set(GAME_SOURCES
   src/Entities.cpp     src/CharacterArt.cpp
   src/Dialogue.cpp     src/DialogueData.cpp
   src/ClueBook.cpp
-  src/Audio.cpp        src/AudioData.cpp    src/Synth.cpp
+  src/Audio.cpp        src/AudioData.cpp    src/Synth.cpp    src/AudioFiles.cpp
   src/Renderer.cpp
   src/Ui.cpp)
 
@@ -51,6 +51,11 @@ else()
   target_compile_options(watchman_core PRIVATE -Wall -Wextra)
   target_compile_options(Watch-Man PRIVATE -Wall -Wextra)
 endif()
+
+# Writes every generated sound as a WAV into assets/audio/<folder>/ (skips files that already exist):
+#   cmake --build build --target export_sounds && ./build/export_sounds assets/audio
+add_executable(export_sounds tools/export_sounds.cpp)
+target_link_libraries(export_sounds PRIVATE watchman_core)
 
 # Copy assets next to the executable if an assets directory is present.
 if(EXISTS "${CMAKE_SOURCE_DIR}/assets")

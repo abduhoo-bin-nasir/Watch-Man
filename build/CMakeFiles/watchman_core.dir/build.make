@@ -226,10 +226,24 @@ CMakeFiles/watchman_core.dir/src/Synth.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/watchman_core.dir/src/Synth.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/Synth.cpp -o CMakeFiles/watchman_core.dir/src/Synth.cpp.s
 
+CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o: CMakeFiles/watchman_core.dir/flags.make
+CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/AudioFiles.cpp
+CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o: CMakeFiles/watchman_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o -MF CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o.d -o CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/AudioFiles.cpp
+
+CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abduhoo/University/Projects/Watch-Man/src/AudioFiles.cpp > CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.i
+
+CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/AudioFiles.cpp -o CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.s
+
 CMakeFiles/watchman_core.dir/src/Renderer.cpp.o: CMakeFiles/watchman_core.dir/flags.make
 CMakeFiles/watchman_core.dir/src/Renderer.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp
 CMakeFiles/watchman_core.dir/src/Renderer.cpp.o: CMakeFiles/watchman_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/watchman_core.dir/src/Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/watchman_core.dir/src/Renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/watchman_core.dir/src/Renderer.cpp.o -MF CMakeFiles/watchman_core.dir/src/Renderer.cpp.o.d -o CMakeFiles/watchman_core.dir/src/Renderer.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp
 
 CMakeFiles/watchman_core.dir/src/Renderer.cpp.i: cmake_force
@@ -243,7 +257,7 @@ CMakeFiles/watchman_core.dir/src/Renderer.cpp.s: cmake_force
 CMakeFiles/watchman_core.dir/src/Ui.cpp.o: CMakeFiles/watchman_core.dir/flags.make
 CMakeFiles/watchman_core.dir/src/Ui.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/Ui.cpp
 CMakeFiles/watchman_core.dir/src/Ui.cpp.o: CMakeFiles/watchman_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/watchman_core.dir/src/Ui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/watchman_core.dir/src/Ui.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/watchman_core.dir/src/Ui.cpp.o -MF CMakeFiles/watchman_core.dir/src/Ui.cpp.o.d -o CMakeFiles/watchman_core.dir/src/Ui.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Ui.cpp
 
 CMakeFiles/watchman_core.dir/src/Ui.cpp.i: cmake_force
@@ -267,6 +281,7 @@ watchman_core_OBJECTS = \
 "CMakeFiles/watchman_core.dir/src/Audio.cpp.o" \
 "CMakeFiles/watchman_core.dir/src/AudioData.cpp.o" \
 "CMakeFiles/watchman_core.dir/src/Synth.cpp.o" \
+"CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o" \
 "CMakeFiles/watchman_core.dir/src/Renderer.cpp.o" \
 "CMakeFiles/watchman_core.dir/src/Ui.cpp.o"
 
@@ -284,11 +299,12 @@ libwatchman_core.a: CMakeFiles/watchman_core.dir/src/ClueBook.cpp.o
 libwatchman_core.a: CMakeFiles/watchman_core.dir/src/Audio.cpp.o
 libwatchman_core.a: CMakeFiles/watchman_core.dir/src/AudioData.cpp.o
 libwatchman_core.a: CMakeFiles/watchman_core.dir/src/Synth.cpp.o
+libwatchman_core.a: CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o
 libwatchman_core.a: CMakeFiles/watchman_core.dir/src/Renderer.cpp.o
 libwatchman_core.a: CMakeFiles/watchman_core.dir/src/Ui.cpp.o
 libwatchman_core.a: CMakeFiles/watchman_core.dir/build.make
 libwatchman_core.a: CMakeFiles/watchman_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library libwatchman_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX static library libwatchman_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/watchman_core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/watchman_core.dir/link.txt --verbose=$(VERBOSE)
 

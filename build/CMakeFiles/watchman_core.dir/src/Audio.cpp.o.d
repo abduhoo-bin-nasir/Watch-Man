@@ -181,4 +181,5 @@ CMakeFiles/watchman_core.dir/src/Audio.cpp.o: \
  /usr/include/c++/16/bits/std_thread.h \
  /usr/include/c++/16/bits/this_thread_sleep.h \
  /usr/include/c++/16/bits/chrono.h /usr/include/c++/16/ratio \
- /usr/include/c++/16/ctime /usr/include/c++/16/bits/parse_numbers.h
+ /usr/include/c++/16/ctime /usr/include/c++/16/bits/parse_numbers.h \
+ /home/abduhoo/University/Projects/Watch-Man/src/AudioFiles.h

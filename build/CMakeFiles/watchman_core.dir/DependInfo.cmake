@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/abduhoo/University/Projects/Watch-Man/src/Audio.cpp" "CMakeFiles/watchman_core.dir/src/Audio.cpp.o" "gcc" "CMakeFiles/watchman_core.dir/src/Audio.cpp.o.d"
   "/home/abduhoo/University/Projects/Watch-Man/src/AudioData.cpp" "CMakeFiles/watchman_core.dir/src/AudioData.cpp.o" "gcc" "CMakeFiles/watchman_core.dir/src/AudioData.cpp.o.d"
+  "/home/abduhoo/University/Projects/Watch-Man/src/AudioFiles.cpp" "CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o" "gcc" "CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o.d"
   "/home/abduhoo/University/Projects/Watch-Man/src/CharacterArt.cpp" "CMakeFiles/watchman_core.dir/src/CharacterArt.cpp.o" "gcc" "CMakeFiles/watchman_core.dir/src/CharacterArt.cpp.o.d"
   "/home/abduhoo/University/Projects/Watch-Man/src/ClueBook.cpp" "CMakeFiles/watchman_core.dir/src/ClueBook.cpp.o" "gcc" "CMakeFiles/watchman_core.dir/src/ClueBook.cpp.o.d"
   "/home/abduhoo/University/Projects/Watch-Man/src/Dialogue.cpp" "CMakeFiles/watchman_core.dir/src/Dialogue.cpp.o" "gcc" "CMakeFiles/watchman_core.dir/src/Dialogue.cpp.o.d"

@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/watchman_core.dir/src/Audio.cpp.o.d"
   "CMakeFiles/watchman_core.dir/src/AudioData.cpp.o"
   "CMakeFiles/watchman_core.dir/src/AudioData.cpp.o.d"
+  "CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o"
+  "CMakeFiles/watchman_core.dir/src/AudioFiles.cpp.o.d"
   "CMakeFiles/watchman_core.dir/src/CharacterArt.cpp.o"
   "CMakeFiles/watchman_core.dir/src/CharacterArt.cpp.o.d"
   "CMakeFiles/watchman_core.dir/src/ClueBook.cpp.o"
