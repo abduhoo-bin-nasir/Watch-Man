@@ -45,12 +45,17 @@ inline int clampi(float f, int lo, int hi) {   // NaN-safe float -> clamped int
 }
 
 // ---- which pixel-art design a character or prop uses (the designs live in CharacterArt.cpp)
-enum ArtId { ART_MAN, ART_OLD, ART_CAT, ART_CRATE, ART_JANITOR, ART_WOMAN, ART_COUNT };
+enum ArtId { ART_MAN, ART_OLD, ART_CAT, ART_CRATE, ART_JANITOR, ART_WOMAN, ART_TANK, ART_ANTENNA,
+              ART_TABLE, ART_SOFA, ART_WARDROBE, ART_BED, ART_LAMP, ART_TV, ART_PIANO, ART_CHAIR,   // furniture seen through peepholes
+              ART_COUNT };
+constexpr float SKY_H = 40.0f;        // ceiling height of an outdoor cell: open sky (nothing is drawn there but the night)
+constexpr float PEEP_FOV = 2.1f;      // horizontal field of view through a peephole (radians, about 120 degrees)
+constexpr float PARAPET_H = 1.2f;     // height of the roof's edge wall; above it you look out over the city
 
 // ---- one frame of player input, gathered by Game::run() and consumed by Game::update()
 struct Input {
     float turn = 0, fw = 0, st = 0, mouseX = 0, mouseY = 0, pitchKey = 0;
-    bool interact = false, recenter = false;
+    bool interact = false, recenter = false, peep = false;
     bool up = false, down = false, left = false, right = false, enter = false, esc = false, journal = false;
     int num = 0, pick = -1, hover = -1, tabPick = -1;       // number key pressed, clicked menu item, hovered menu item, clicked journal tab
 };

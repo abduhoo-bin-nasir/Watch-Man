@@ -443,10 +443,11 @@ void Ui::draw(Game& g, int ww, int wh) {
         DrawText(where.c_str(), (int)dst.x + 12, 10, 18, Color{200, 210, 220, 200});
         DrawText(fmtTime(g.minutes()).c_str(), (int)(dst.x + dst.width) - 118, 22, 18, Color{200, 210, 220, 200});
     }
-    if (g.mode == M_WALK || g.mode == M_KNOCK || g.mode == M_FADE || g.mode == M_RIDE) {
+    if (g.mode == M_WALK || g.mode == M_KNOCK || g.mode == M_FADE || g.mode == M_RIDE || g.mode == M_PEEP) {
         int top = (int)dst.height;
         DrawRectangle(0, top, ww, wh - top, Color{10, 13, 16, 255});
-        DrawText("WASD move   Left/Right turn   TAB mouse look   E knock / talk / lift   J journal", 10, top + 6, 14, COL_SYS);
+        DrawText(g.mode == M_PEEP ? "PEEPHOLE   A/D or Left/Right look around   E / P / Esc step back"
+                                  : "WASD move   Left/Right turn   TAB mouse look   E knock / talk / lift   P peephole   J journal   M mute", 10, top + 6, 14, COL_SYS);
         vector<std::pair<string, Color>> rows;
         int first = std::max(0, (int)g.log.size() - 3);
         for (int i = first; i < (int)g.log.size(); i++)

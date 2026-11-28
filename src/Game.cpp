@@ -1,9 +1,38 @@
 // Game.cpp - the state machine: walking, knocking, talking, the journal, stairs, the lift and the ending.
 #include "Game.h"
+
 #include "Ui.h"
 
 Game::Game() : ui(std::make_unique<Ui>()) {}
 Game::~Game() = default;
+
+static_assert((int)M_WALK == (int)AM_WALK && (int)M_KNOCK == (int)AM_KNOCK && (int)M_TALK == (int)AM_TALK && (int)M_JOURNAL == (int)AM_JOURNAL &&
+              (int)M_END == (int)AM_END && (int)M_FADE == (int)AM_FADE && (int)M_RIDE == (int)AM_RIDE && (int)M_PEEP == (int)AM_PEEP,
+              "Game's Mode and Audio's AudioMode must stay in the same order");
+
+// A snapshot of what the sound manager needs to know this frame (Audio.h): where you are, who is moving, what is happening.
+AudioScene Game::makeAudioScene(float dt) const {
+    AudioScene s;
+    s.dt = dt; s.time = (double)time; s.mode = (int)mode;
+    s.floor = building.currentIndex(); s.px = player.x; s.py = player.y; s.yaw = player.yaw;
+    s.building = &building;
+    s.tab = journal.tab; s.spread = journal.spread;
+    s.boltT = weather.boltT; s.boltAz = weather.boltAz; s.toastT = toastT;
+    if (mode == M_PEEP && peepFlat >= 0 && peepFlat < (int)flatKeys.size()) { s.peepFloor = flatKeys[(size_t)peepFlat].first; s.peepDoor = flatKeys[(size_t)peepFlat].second; }
+    for (const auto& c : cast)
+        if (!c->hidden && !c->isResident()) s.movers.push_back(AudioMover{c.get(), c->floor, c->x, c->y, c->id == "cat"});
+    return s;
+}
+
+// The lift only serves floors that have a lift cabin (the roof has none): the next such floor, going round.
+int Game::nextLiftFloor() const {
+    int n = building.count(), cur = building.currentIndex();
+    for (int i = 1; i < n; i++) {
+        int f = (cur + i) % n;
+        if (building.level(f).hasElevator()) return f;
+    }
+    return cur;
+}
 
 void Game::init() {
     def = designBuilding();
@@ -12,6 +41,15 @@ void Game::init() {
     book.loadCase();
     cast = buildCast(def);
     props = buildProps(def);
+    for (const FlatDef& fd : def.flats) {                                  // the rooms behind the peepholes
+        Level lv; lv.build(fd.plan, 0, {}, 1);
+        vector<Billboard> bills;
+        for (const PropDef& d : fd.props) {
+            Billboard s; s.x = d.at.x * 2; s.y = d.at.y * 2; s.yaw = d.yaw; s.h = d.h; s.art = d.art; s.main = d.main; s.acc = d.main; s.floorH = 0;
+            bills.push_back(s);
+        }
+        flats.push_back(std::move(lv)); flatBills.push_back(std::move(bills)); flatKeys.push_back({fd.floor, fd.door});
+    }
     player.floor = building.currentIndex();
     player.x = def.start.x * 2; player.y = def.start.y * 2; player.yaw = def.startYaw;
     say("Block 7. The stairs are in the middle, the lift is in the corner.", COL_SYS);
@@ -49,27 +87,31 @@ string Game::prompt() const {
     const Level& L = building.current();
     int nb = renderer.nearBill;
     if (nb >= 0 && nb < (int)owners.size() && owners[(size_t)nb]) return "[E] " + owners[(size_t)nb]->verb + " " + owners[(size_t)nb]->name;
-    if (L.inCar(player.x, player.y)) return "[E] Ride to the " + building.level((building.currentIndex() + 1) % building.count()).name;
+    if (L.inCar(player.x, player.y)) return "[E] Ride to the " + building.level(nextLiftFloor()).name;
     const Focus& f = renderer.focus;
     if (f.valid && f.type == C_DOOR && f.t < 3.6f) {
         DoorInfo d = L.doorInfoAt(f.cx, f.cy);
         if (d.id == DOOR_ELEVATOR) return L.doorTgt[DOOR_ELEVATOR] > 0.5f ? "" : "[E] Call the lift";
         if (d.id == DOOR_BOILER) return "[E] Try the boiler-room door";
         if (d.id == DOOR_ROOF) return "[E] Try the roof door";
-        if (d.floor == 0 && d.id == 6) return "[E] Examine the sealed door (106)";
-        return "[E] Knock on Apt " + L.doorLabel(d.id);
+        if (d.floor == 0 && d.id == 6) return "[E] Examine the sealed door (106)   [P] Peephole";
+        return "[E] Knock on Apt " + L.doorLabel(d.id) + "   [P] Peephole";
     }
     return "";
 }
 
 // ---------------------------------------------------------------- one frame
 void Game::update(float dt, const Input& in) {
+    struct AudioFeed {                                                      // whichever way update() returns, the sound manager sees this frame
+        Game& g; float dt;
+        ~AudioFeed() { if (g.audio.ready()) g.audio.update(g.makeAudioScene(dt)); }
+    } audioFeed{*this, dt};
     if (mode == M_JOURNAL) { journalInput(in); return; }                   // the world holds still while you read
     if (in.journal && (mode == M_WALK || mode == M_TALK)) { openJournal(); return; }
     time += dt; clock += dt * 0.5f;
     toastT = std::max(0.0f, toastT - dt); shake = std::max(0.0f, shake - dt * 3.0f); capT = std::max(0.0f, capT - dt);
     linkCooldown = std::max(0.0f, linkCooldown - dt);
-    bars += ((mode == M_WALK || mode == M_FADE || mode == M_RIDE ? 0.0f : 1.0f) - bars) * (1.0f - std::exp(-dt * 6.0f));
+    bars += ((mode == M_WALK || mode == M_FADE || mode == M_RIDE || mode == M_PEEP ? 0.0f : 1.0f) - bars) * (1.0f - std::exp(-dt * 6.0f));
     { string t = book.takeToast(); if (!t.empty()) { toast = t; toastT = 4.5f; } }
     weather.update(dt, time, player.yaw);
 
@@ -116,7 +158,12 @@ void Game::update(float dt, const Input& in) {
     // draw the world
     vector<Billboard> bills = collectBillboards();
     CamState cs{player.x, player.y, player.feet, player.yaw, player.pitch, player.bob};
-    renderer.render(L, cs, bills, weather, time);
+    if (mode == M_PEEP && peepFlat >= 0 && peepFlat < (int)flats.size()) {   // through the peephole: the room behind the door, fisheye, a little unsteady
+        flats[(size_t)peepFlat].updateLamps(time, weather.flash);
+        CamState pc{2.05f, 5.0f, 0.0f, peepYaw + std::sin(time * 0.9f) * 0.02f, 0.0f, 0.0f};
+        pc.fish = true;
+        renderer.render(flats[(size_t)peepFlat], pc, flatBills[(size_t)peepFlat], weather, time);
+    } else renderer.render(L, cs, bills, weather, time);
 
     // mode-specific updates (they may switch the mode)
     switch (mode) {
@@ -124,6 +171,11 @@ void Game::update(float dt, const Input& in) {
         case M_TALK: updateTalk(dt, in); break;
         case M_FADE: updateFade(dt); break;
         case M_RIDE: updateRide(dt); break;
+        case M_PEEP:
+            peepT += dt;
+            peepYaw = std::clamp(peepYaw + in.turn * 0.9f * dt, -0.45f, 0.45f);
+            if (in.esc || in.interact || in.peep) { mode = M_WALK; peepFlat = -1; }
+            break;
         case M_END:
             endT += dt;
             if (in.esc) quit = true;
@@ -136,6 +188,7 @@ void Game::update(float dt, const Input& in) {
         case M_WALK:
             if (in.esc) quit = true;
             if (in.interact) interact();
+            else if (in.peep) tryPeephole();
             break;
         default: break;
     }
@@ -163,6 +216,24 @@ void Game::updateElevatorDoors() {
     }
 }
 
+int Game::flatFor(int floor, int door) const {
+    for (size_t i = 0; i < flatKeys.size(); i++) if (flatKeys[i].first == floor && flatKeys[i].second == door) return (int)i;
+    return -1;
+}
+// [P] at an apartment door: look through the peephole. Empty flats show their room; people who are home just notice the lens.
+void Game::tryPeephole() {
+    const Level& L = building.current();
+    const Focus& f = renderer.focus;
+    if (!(f.valid && f.type == C_DOOR && f.t < 3.6f)) return;
+    DoorInfo d = L.doorInfoAt(f.cx, f.cy);
+    if (d.id < 1 || d.id > DOOR_APT_MAX) { say("No peephole on this one.", COL_ME); return; }
+    if (d.floor == 0 && d.id == 6) { say("The lens is sealed under crime-scene tape.", COL_ME); return; }
+    if (d.floor == 1 && d.id == 4) { say("Foil. Somebody has covered the lens with foil. Of course.", COL_ME); return; }
+    if (residentAt(d.floor, d.id)) { say("Something moves behind the lens. Knock, and somebody will answer.", COL_ME); return; }
+    int k = flatFor(d.floor, d.id);
+    if (k < 0) { say("Too dark to see anything through the lens.", COL_ME); return; }
+    peepFlat = k; peepYaw = 0; peepT = 0; mode = M_PEEP; modeT = 0;
+}
 void Game::interact() {
     const Level& L = building.current();
     int nb = renderer.nearBill;
@@ -269,7 +340,7 @@ void Game::callElevator() {
 
 void Game::startRide() {
     mode = M_RIDE; modeT = 0; rideSwapped = false; rideOpened = false;
-    rideTarget = (building.currentIndex() + 1) % building.count();
+    rideTarget = nextLiftFloor();
     building.current().doorTgt[DOOR_ELEVATOR] = 0;                        // doors close with you inside
     say("You press the button. The doors close.", COL_SYS);
 }
@@ -321,16 +392,22 @@ int Game::run() {
     SetTargetFPS(60);
     init();
     ui->init();
+    audio.buildAsync();                         // the sounds are made on a second thread (about 2 s); the game starts at once and fades them in
+    audio.openDevice();
     while (!WindowShouldClose() && !quit) {
         Input in;
         bool walk = mode == M_WALK;
-        in.turn = walk ? (float)(IsKeyDown(KEY_RIGHT) - IsKeyDown(KEY_LEFT)) : 0;
+        bool look = walk || mode == M_PEEP;                       // turning is allowed while walking and while looking through a peephole
+        in.turn = look ? (float)(IsKeyDown(KEY_RIGHT) - IsKeyDown(KEY_LEFT)) : 0;
+        if (mode == M_PEEP) in.turn += (float)(IsKeyDown(KEY_D) - IsKeyDown(KEY_A));
         in.fw = walk ? (float)((IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) - (IsKeyDown(KEY_S) || IsKeyDown(KEY_DOWN))) : 0;
         in.st = walk ? (float)(IsKeyDown(KEY_D) - IsKeyDown(KEY_A)) : 0;
         in.interact = IsKeyPressed(KEY_E);
+        in.peep = IsKeyPressed(KEY_P);
         in.enter = IsKeyPressed(KEY_ENTER) || IsKeyPressed(KEY_KP_ENTER);
         in.esc = IsKeyPressed(KEY_ESCAPE);
         in.journal = IsKeyPressed(KEY_J);
+        if (IsKeyPressed(KEY_M)) audio.toggleMute();       // M: all sound on/off
         in.up = IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_W) || IsKeyPressed(KEY_PAGE_UP);
         in.down = IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_S) || IsKeyPressed(KEY_PAGE_DOWN);
         in.left = IsKeyPressed(KEY_LEFT) || IsKeyPressed(KEY_A);
@@ -349,6 +426,7 @@ int Game::run() {
         ui->draw(*this, GetScreenWidth(), GetScreenHeight());
         EndDrawing();
     }
+    audio.closeDevice();
     ui->shutdown();
     CloseWindow();
     return 0;

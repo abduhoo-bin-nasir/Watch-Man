@@ -42,6 +42,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake"
   "/usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake"
   "/usr/share/cmake/Modules/CMakeUnixFindMake.cmake"
+  "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake"
+  "/usr/share/cmake/Modules/CheckIncludeFile.cmake"
+  "/usr/share/cmake/Modules/CheckLibraryExists.cmake"
   "/usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake"
   "/usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake"
   "/usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake"
@@ -105,12 +108,14 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake/Modules/FindPkgConfig.cmake"
+  "/usr/share/cmake/Modules/FindThreads.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeInspectCLinker.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeInspectCXXLinker.cmake"
+  "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake"
   "/usr/share/cmake/Modules/Internal/FeatureTesting.cmake"
   "/usr/share/cmake/Modules/Linker/GNU-C.cmake"
   "/usr/share/cmake/Modules/Linker/GNU-CXX.cmake"
@@ -148,6 +153,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/watchman_core.dir/DependInfo.cmake"
   "CMakeFiles/Watch-Man.dir/DependInfo.cmake"
   "CMakeFiles/logic_test.dir/DependInfo.cmake"
   )

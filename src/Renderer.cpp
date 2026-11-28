@@ -65,6 +65,22 @@ void Renderer::buildTextures(int floorCount) {
         if (hs(x >> 3, y >> 3) > 0.9f) k *= 0.7f;
         return mul(((x >> 5) + (y >> 5)) & 1 ? RGB{62, 74, 76} : RGB{50, 62, 64}, k);
     });
+    tWood = makeTex(64, 64, [](int x, int y, int, int) -> RGB {                    // floorboards
+        int plank = x / 16;
+        float k = 0.78f + 0.4f * hs(x / 2 + plank * 7, y / 8 + plank * 13);
+        RGB c{96, 68, 46};
+        if (x % 16 == 0) k *= 0.45f;                                              // gaps between boards
+        if (y % 32 == (plank * 11) % 32) k *= 0.6f;                               // board ends
+        return mul(c, k);
+    });
+    tRoof = makeTex(64, 64, [](int x, int y, int, int) -> RGB {                    // wet bitumen roofing: seams, patches, puddles
+        float k = 0.85f + 0.3f * hs(x, y);
+        RGB c{64, 70, 76};
+        if (x % 32 < 1 || y % 16 < 1) k *= 0.55f;                                  // overlapping sheets
+        if (hs(x >> 2, (y >> 2) + 17) > 0.93f) k *= 0.7f;                          // patches and stains
+        if (hs(x >> 3, (y >> 3) + 5) > 0.80f) { c = {38, 54, 72}; k *= 1.25f; }     // puddles: bluer and brighter
+        return mul(c, k);
+    });
     tCeil = makeTex(64, 64, [](int x, int y, int, int) -> RGB {
         float k = 0.9f + 0.2f * hs(x, y);
         if (x % 32 < 1 || y % 32 < 1) k *= 0.6f;
@@ -180,9 +196,22 @@ float Renderer::lampL(float wx, float wy) {   // sum of light pools around the b
 
 
 // ---------------------------------------------------------------- floor, ceiling, windows, rooms
+// One ray per screen column. A normal view casts rays through a flat camera plane (so a wall at one distance stays straight);
+// the peephole spreads the rays by EQUAL ANGLES and measures real distance along them, which is the classic raycaster
+// "fisheye": walls bow outwards and everything at the edge shrinks.
+void Renderer::rayFor(const Cam& c, int x, float& rx, float& ry) {
+    float cs = 2.0f * (float)x / RW - 1.0f;
+    if (c.fish) { float a = c.yaw + cs * PEEP_FOV * 0.5f; rx = std::cos(a); ry = std::sin(a); }
+    else { rx = c.dx + c.plx * cs; ry = c.dy + c.ply * cs; }
+}
+RGB Renderer::skyAt(const Cam& c, float rx, float ry, float sl) {
+    int ns = std::fabs(rx) >= std::fabs(ry) ? 0 : 1;                           // same code as a window, with the camera as the origin
+    return outsideView(rx, ry, c.px, c.py, ns, c.eye, sl, std::atan2(ry, rx));
+}
 void Renderer::drawCeilRow(const Cam& c, int x, int y, const Cell& cell, float rx, float ry) {
     float dv = c.hz - (y + 0.5f);
     if (dv < 0.01f) return;
+    if (cell.C >= SKY_H - 1.0f) { RGB o = skyAt(c, rx, ry, dv / RH); putFlat(x, y, o.r, o.g, o.b); return; }   // open sky
     float t = (cell.C - c.eye) * RH / dv, wx = c.px + t * rx, wy = c.py + t * ry;
     bulb = 0;
     float L = lampL(wx, wy);
@@ -201,7 +230,9 @@ void Renderer::drawFloorRow(const Cam& c, int x, int y, const Cell& cell, float 
         float a = cell.stairAxis == 0 ? wx : wy, b2 = cell.stairAxis == 0 ? wy : wx, uu = frac(a);
         if (cell.stairSlope < 0) uu = 1.0f - uu;
         p = texAt(tStair, uu, frac(b2 * 0.5f));
-    } else p = texAt(tFloor, frac(wx * 0.5f), frac(wy * 0.5f));
+    } else if (cell.C >= SKY_H - 1.0f) p = texAt(tRoof, frac(wx * 0.5f), frac(wy * 0.5f));   // outdoors
+    else if (lvl->flat) p = texAt(tWood, frac(wx * 0.5f), frac(wy * 0.5f));                    // inside a flat
+    else p = texAt(tFloor, frac(wx * 0.5f), frac(wy * 0.5f));
     putPix(x, y, p[0], p[1], p[2], L, std::max(0.04f, std::exp(-t / 16)));
 }
 // What you see through a window: open night air, a long way up. No street (we are high above it), just rain falling
@@ -321,17 +352,23 @@ void Renderer::drawWallRows(const Cam& c, int x, int y0, int y1, float tFar, flo
     if (flip) uu = 1.0f - uu;
     bulb = 0;
     float L = lampL(hx, hy), f = std::max(0.04f, std::exp(-tFar / 16)) * (nside ? 0.88f : 1.0f);
-    float cs = 2.0f * x / RW - 1.0f, rx = c.dx + c.plx * cs, ry = c.dy + c.ply * cs;
+    float rx, ry; rayFor(c, x, rx, ry);
     // Beside the stairs the floor height jumps with every step, so a pattern measured from it would zig-zag.
     // Measure from the smooth slope through the step edges instead: trim line and handrail become true diagonals.
     float refF = cur.stair ? cur.rf0 + cur.rfx * hx + cur.rfy * hy : cur.F;
     float az = wall.type == C_WINDOW ? std::atan2(ry, rx) : 0.0f;      // compass direction of this column (windows only)
+    bool outdoors = cur.C >= SKY_H - 1.0f;
     int doorId = wall.type == C_DOOR ? std::clamp((int)wall.door, 1, DOOR_KINDS - 1) : 0;
     float oa = doorId ? lvl->doorAmt[doorId] : 0.0f;                   // how far this door is open
     const std::array<Tex, DOOR_KINDS>& dts = doorTex[(size_t)lvl->index];
     for (int y = std::max(0, y0); y < std::min(RH, y1); y++) {
         float h = c.eye - ((y + 0.5f) - c.hz) * tFar / RH;
         float v = 1.0f - (h - refF) / WALL_H;                              // texture row follows the floor (or the stair slope)
+        if (outdoors && (v < 0.0f || (wall.type == C_PARAPET && h > PARAPET_H))) {   // above the roof's edge, or above a wall's top: the night
+            RGB o = skyAt(c, rx, ry, -((y + 0.5f) - c.hz) / RH);
+            putFlat(x, y, o.r, o.g, o.b);
+            continue;
+        }
         float r, g, b;
         if (wall.type == C_WINDOW) {
             bool inPane = uu > 0.14f && uu < 0.86f && v > 0.16f && v < 0.84f;
@@ -387,7 +424,7 @@ void Renderer::drawRiserRows(int x, int y0, int y1, int topRow, int botRow, floa
 }
 
 void Renderer::renderColumn(int x, const Cam& c) {
-    float cs = 2.0f * x / RW - 1.0f, rx = c.dx + c.plx * cs, ry = c.dy + c.ply * cs;
+    float rx, ry; rayFor(c, x, rx, ry);
     int mx = (int)std::floor(c.px), my = (int)std::floor(c.py);
     const float BIG = 1e30f;
     float ddx = std::fabs(rx) < 1e-9f ? BIG : std::fabs(1.0f / rx), ddy = std::fabs(ry) < 1e-9f ? BIG : std::fabs(1.0f / ry);
@@ -447,6 +484,12 @@ void Renderer::renderColumn(int x, const Cam& c) {
         if (nx.C < cur.C - 1e-4f) {
             int bot = toRow(projY(c.hz, c.eye, nx.C, tFar));
             for (int y = std::max(0, yT); y < std::min(yB, bot); y++) {
+                if (cur.C >= SKY_H - 1.0f) {                                         // above the roof hut's doorway: the night, not plaster
+                    float sr, sq; rayFor(c, x, sr, sq);
+                    RGB o = skyAt(c, sr, sq, -((y + 0.5f) - c.hz) / RH);
+                    putFlat(x, y, o.r, o.g, o.b);
+                    continue;
+                }
                 float h = c.eye - ((y + 0.5f) - c.hz) * tFar / RH;
                 const uint8_t* p = texAt(tWall, u, 0.05f + 0.4f * frac(h));         // plaster, varied by height (no streaks)
                 putPix(x, y, p[0], p[1], p[2], lampL(hx, hy) * 0.8f, std::max(0.04f, std::exp(-tFar / 16)));
@@ -477,7 +520,13 @@ void Renderer::drawGlows(const Cam& c) {
         float tx = (c.dx * ry - c.dy * rx) / PLANE;
         float bulbH = lvl->cellAt((int)std::floor(l.x), (int)std::floor(l.y)).C - 0.35f;
         float ceilH = bulbH + 0.35f;
-        float sx = RW / 2.0f * (1 + tx / ty), sy = c.hz - (bulbH - c.eye) * RH / ty, sc = c.hz - (ceilH - c.eye) * RH / ty;
+        float sx = RW / 2.0f * (1 + tx / ty);
+        if (c.fish) {                                                        // peephole: place it by angle, size it by real distance
+            float lat = tx * PLANE;
+            ty = std::hypot(ty, lat);
+            sx = RW / 2.0f * (1 + std::atan2(lat, (rx * c.dx + ry * c.dy)) / (PEEP_FOV * 0.5f));
+        }
+        float sy = c.hz - (bulbH - c.eye) * RH / ty, sc = c.hz - (ceilH - c.eye) * RH / ty;
         float R = std::min(100.0f, 1.5f * RH / ty);                         // halo profile radius in pixels (1.5 cells)
         float Rb = R * 0.72f;                                               // beyond this the halo is too faint to see: skip it
         if (sx < -Rb || sx > RW + Rb) continue;                             // far off to the side: nothing to draw
@@ -510,7 +559,7 @@ void Renderer::drawBillboards(const Cam& c, const vector<Billboard>& bills) {
     for (size_t i = 0; i < bills.size(); i++) {
         const Billboard& s = bills[i];
         float rx = s.x - c.px, ry = s.y - c.py, ty = rx * c.dx + ry * c.dy;
-        if (ty > 0.4f) list.push_back({&s, ty, (c.dx * ry - c.dy * rx) / PLANE, (int)i});
+        if (ty > (c.fish ? 0.15f : 0.4f)) list.push_back({&s, ty, (c.dx * ry - c.dy * rx) / PLANE, (int)i});
     }
     std::sort(list.begin(), list.end(), [](const Item& a, const Item& b) { return a.ty > b.ty; });   // far to near
     nearBill = -1;
@@ -527,7 +576,13 @@ void Renderer::drawBillboards(const Cam& c, const vector<Billboard>& bills) {
         bulb = 0;
         float L = lampL(s.x, s.y) + 0.12f + s.lit;
         float t = it.ty;                                                     // the whole sprite sits at the depth of its centre
-        float sxc = RW / 2.0f * (1 + it.tx / it.ty), halfPx = hw * RH / std::max(0.25f, t) + 1.0f;
+        float sxc = RW / 2.0f * (1 + it.tx / it.ty);
+        if (c.fish) {                                                        // peephole: by angle, and the real distance (what the lens does)
+            float lat = it.tx * PLANE;
+            t = std::hypot(it.ty, lat);
+            sxc = RW / 2.0f * (1 + std::atan2(lat, it.ty) / (PEEP_FOV * 0.5f));
+        }
+        float halfPx = hw * RH / std::max(0.25f, t) + 1.0f;
         int xa = clampi(std::floor(sxc - halfPx), 0, RW), xb = clampi(std::ceil(sxc + halfPx), 0, RW);
         float top = c.hz - (s.floorH + H - c.eye) * RH / t, bot = c.hz - (s.floorH - c.eye) * RH / t;
         if (bot - top < 0.5f) continue;
@@ -537,7 +592,7 @@ void Renderer::drawBillboards(const Cam& c, const vector<Billboard>& bills) {
             if (zbuf[x] < t) continue;                                       // a wall is in front of it
             float cs = 2.0f * (x + 0.5f) / RW - 1.0f;
             float sp = cs * PLANE * t - it.tx * PLANE;                       // sideways offset from the centre of the sprite, world units
-            float uf = 0.5f + sp / (2 * hw);
+            float uf = c.fish ? 0.5f + ((x + 0.5f) - sxc) / (2.0f * halfPx) : 0.5f + sp / (2 * hw);
             if (uf < 0 || uf >= 1) continue;
             int u = clampi(uf * a.w, 0, a.w - 1);
             for (int y = ya; y < yb; y++) {
@@ -548,7 +603,7 @@ void Renderer::drawBillboards(const Cam& c, const vector<Billboard>& bills) {
                 if (ch == ' ' || !spriteColor(ch, s.main, s.acc, col)) continue;
                 int8_t sd = a.s[ai];
                 col = mul(col, sd < 0 ? 0.62f : sd > 0 ? 1.28f : 1.0f);
-                if (ch == 'F') putPix(x, y, col.r, col.g, col.b, 1.4f, std::max(ft, 0.6f));   // eyes glow
+                if (ch == 'F' || ch == 'V') putPix(x, y, col.r, col.g, col.b, 1.4f, std::max(ft, 0.6f));   // eyes glow
                 else putPix(x, y, col.r, col.g, col.b, L, ft);
             }
         }
@@ -557,17 +612,51 @@ void Renderer::drawBillboards(const Cam& c, const vector<Billboard>& bills) {
 }
 
 // ---------------------------------------------------------------- one frame
+// The peephole lens: everything outside a wide oval goes black, the rim darkens and the colours go slightly cold and greenish.
+void Renderer::lensMask() {
+    const float ax = RW * 0.5f * 0.96f, ay = RH * 0.5f * 1.18f;
+    for (int y = 0; y < RH; y++)
+        for (int x = 0; x < RW; x++) {
+            float u = (x + 0.5f - RW * 0.5f) / ax, v = (y + 0.5f - RH * 0.5f) / ay, d = u * u + v * v;
+            uint32_t& p = pix[y * RW + x];
+            float r = (float)(p & 255), g = (float)((p >> 8) & 255), b = (float)((p >> 16) & 255);
+            if (d >= 1.0f) { r = g = b = 3.0f; }
+            else {
+                float k = 1.0f - 0.65f * std::clamp((d - 0.30f) / 0.62f, 0.0f, 1.0f);       // vignette
+                r *= 0.88f * k; g *= 1.0f * k; b *= 1.08f * k;
+                if (d > 0.93f) { float e = (d - 0.93f) / 0.07f; r = r * (1 - e) + 58 * e; g = g * (1 - e) + 46 * e; b = b * (1 - e) + 28 * e; }   // brass ring
+            }
+            p = 0xff000000u | ((uint32_t)std::min(255.0f, b) << 16) | ((uint32_t)std::min(255.0f, g) << 8) | (uint32_t)std::min(255.0f, r);
+        }
+}
+// Rain close to the camera, on the roof: fast bright streaks in screen space. (The rain farther away is part of skyAt.)
+void Renderer::drawRain() {
+    for (int i = 0; i < 80; i++) {
+        uint32_t hv = hash32((uint32_t)i, 7u, 99u);
+        float speed = 95.0f + (float)(hv & 63);
+        float xx = (float)((hv >> 8) & 1023) / 1023.0f * (RW + 40) - 20.0f;
+        float yy = std::fmod(time_ * speed + (float)((hv >> 18) & 255) * 3.0f, (float)(RH + 24)) - 12.0f;
+        int len = 4 + (int)((hv >> 4) & 3);
+        for (int k = 0; k < len; k++) {
+            float a = (1.0f - (float)k / (float)len) * 0.5f + 0.08f;
+            addLight((int)(xx - (float)k * 0.35f), (int)(yy - (float)k), 70 * a, 88 * a, 110 * a);
+        }
+    }
+}
 void Renderer::render(const Level& level, const CamState& cs, const vector<Billboard>& bills, const Weather& weather, float time) {
     lvl = &level; wx = &weather; time_ = time;
     Cam c;
     c.px = cs.x; c.py = cs.y; c.eye = cs.feet + EYE_H; c.hz = RH / 2.0f + cs.bob + cs.pitch;
     c.dx = std::cos(cs.yaw); c.dy = std::sin(cs.yaw);
     c.plx = -c.dy * PLANE; c.ply = c.dx * PLANE;
+    c.yaw = cs.yaw; c.fish = cs.fish;
     for (int i = 0; i < RW * RH; i++) pix[i] = 0xff0b0907u;
     focus = Focus();
     for (int x = 0; x < RW; x++) renderColumn(x, c);
     drawGlows(c);
     drawBillboards(c, bills);
+    if (lvl->outdoor && lvl->cellAt((int)cs.x, (int)cs.y).C >= SKY_H - 1.0f) drawRain();   // only when you are out in it, not inside the hut
+    if (cs.fish) lensMask();
     frame++;
 }
 

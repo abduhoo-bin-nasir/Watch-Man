@@ -8,6 +8,7 @@
 //           FADE (changing floor by the stairs)  RIDE (in the lift)
 // Public data members are read by Ui.cpp, which only draws.
 #pragma once
+#include "Audio.h"
 #include "ClueBook.h"
 #include "Dialogue.h"
 #include "Entities.h"
@@ -16,7 +17,7 @@
 
 class Ui;
 
-enum Mode { M_WALK, M_KNOCK, M_TALK, M_JOURNAL, M_END, M_FADE, M_RIDE };
+enum Mode { M_WALK, M_KNOCK, M_TALK, M_JOURNAL, M_END, M_FADE, M_RIDE, M_PEEP };
 
 struct LogLine { string text; Color col; };
 struct JournalState { int tab = 0, spread = 0; vector<string> seen; };   // tab: 0 case, 1 notes, 2 people, 3 board
@@ -83,6 +84,14 @@ private:
     int knockBeat = 0; bool knockSaid = false;
     Character* talkWho = nullptr;
     int fadeLink = 0; bool fadeSwapped = false;
+    int nextLiftFloor() const;
+    Audio audio;                                  // everything you hear (Audio.h); silent until run() opens the sound card
+    AudioScene makeAudioScene(float dt) const;
+    // peepholes: each empty flat is a tiny level of its own, seen through a fisheye lens from just inside the door
+    vector<Level> flats; vector<vector<Billboard>> flatBills; vector<std::pair<int, int>> flatKeys;   // flatKeys[i] = (floor, door) of flats[i]
+    int peepFlat = -1; float peepYaw = 0, peepT = 0;
+    int flatFor(int floor, int door) const;
+    void tryPeephole();
     int rideTarget = 0; bool rideSwapped = false, rideOpened = false;
     float linkCooldown = 0, liftIdle = 0;
     std::unique_ptr<Ui> ui;

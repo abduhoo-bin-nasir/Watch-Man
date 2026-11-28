@@ -12,7 +12,7 @@
 
 class Character;
 
-struct CamState { float x = 0, y = 0, feet = 0, yaw = 0, pitch = 0, bob = 0; };
+struct CamState { float x = 0, y = 0, feet = 0, yaw = 0, pitch = 0, bob = 0; bool fish = false; };   // fish: peephole view (fisheye + lens)
 
 // One thing to draw this frame (a character or a prop), already resolved to world numbers.
 struct Billboard {
@@ -48,7 +48,9 @@ public:
     int nearBill = -1;                                       // set by render(): index of the talkable billboard in front of you, or -1
 
 private:
-    struct Cam { float px, py, eye, hz, dx, dy, plx, ply; };
+    struct Cam { float px, py, eye, hz, dx, dy, plx, ply; float yaw = 0; bool fish = false; };
+    static void rayFor(const Cam& c, int x, float& rx, float& ry);   // the ray through screen column x (a plane for normal views, equal angles for the peephole)
+    void lensMask();                                                 // round dark rim and tint of the peephole
     void putPix(int x, int y, float r, float g, float b, float L, float f);
     void putFlat(int x, int y, float r, float g, float b);
     void addLight(int x, int y, float r, float g, float b);
@@ -62,6 +64,8 @@ private:
     void drawRiserRows(int x, int y0, int y1, int topRow, int botRow, float tFar, float hx, float hy, float u);
     void renderColumn(int x, const Cam& c);
     void drawGlows(const Cam& c);
+    RGB skyAt(const Cam& c, float rx, float ry, float sl);      // the night sky seen from the camera along a ray (roof): skyline, rain, lightning
+    void drawRain();                                            // the rain right in front of the camera (roof)
     void drawBillboards(const Cam& c, const vector<Billboard>& bills);
 
     const Level* lvl = nullptr;
@@ -72,6 +76,6 @@ private:
     float zbuf[RW];
     uint32_t frame = 0;
     float cold = 0, bulb = 0;
-    Tex tWall, tRail, tFloor, tCeil, tStair, tRiser, tMetal, tLift, tMetalDoor;
+    Tex tWood, tRoof, tWall, tRail, tFloor, tCeil, tStair, tRiser, tMetal, tLift, tMetalDoor;
     vector<std::array<Tex, DOOR_KINDS>> doorTex;             // [floor][door id]
 };

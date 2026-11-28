@@ -4,7 +4,7 @@
 #pragma once
 #include "Common.h"
 
-enum CellType : uint8_t { C_OPEN, C_WALL, C_DOOR, C_WINDOW, C_RAIL };
+enum CellType : uint8_t { C_OPEN, C_WALL, C_DOOR, C_WINDOW, C_RAIL, C_PARAPET };
 enum WallMaterial : uint8_t { MAT_PLASTER, MAT_METAL };
 // door ids: 1..8 are apartment doors; the rest are special doors
 enum DoorKind { DOOR_APT_MAX = 8, DOOR_ELEVATOR = 9, DOOR_BOILER = 10, DOOR_ROOF = 11, DOOR_KINDS = 12 };
@@ -28,17 +28,19 @@ struct Lamp { float x = 0, y = 0, k = 1; float r = LAMP_R; bool win = false; int
 struct DoorInfo { int floor = 0, id = 0; float tcx = 0, tcy = 0, nx = 0, ny = 0; };   // door tile centre (cells) + outward normal
 
 // ======================================================================== level design data
-struct Bulb { float x, y; int mode = 0; };                  // tile units. mode: 0 steady, 1 buzzing, 2 dying
-struct LevelDef { string name; vector<string> rows; vector<Bulb> bulbs; };
+struct Bulb { float x, y; int mode = 0; };                  // tile units. mode: 0 steady, 1 buzzing, 2 dying, 3 lightning lamp (lights up when it strikes; invisible), 4 weak steady glow (invisible)
+struct LevelDef { string name; vector<string> rows; vector<Bulb> bulbs; bool outdoor = false, flat = false; };   // outdoor: ',' tiles are open sky above; flat: a small apartment interior (wooden floor)
 // A flight is one physical staircase between two storeys. It rises in direction `dir` from the first step tile
 // (tx,ty) over STAIR_TILES tiles. lowFloor -1 = from the basement, floor count-1 = up to the roof.
 struct FlightDef { int tx, ty; Dir dir; int lowFloor; };
 struct Placement { string id; int floor; V2 at; vector<V2> patrol; float speed = 0; float facing = 0; };   // tile units
 struct HomeDef { string id; int floor; int door; };         // who answers which apartment door
 struct PropDef { int art; int floor; V2 at; float h; RGB main; float yaw; };
+struct FlatDef { int floor, door; LevelDef plan; vector<PropDef> props; };   // what you see through the peephole of one apartment door (tile units; the door is the west wall)
 struct BuildingDef {
     vector<LevelDef> floors;
     vector<FlightDef> flights;
+    vector<FlatDef> flats;
     int startFloor = 0; V2 start{0, 0}; float startYaw = 0;   // where you begin (tile units)
     vector<Placement> characters;
     vector<HomeDef> homes;
@@ -64,6 +66,8 @@ public:
 
     int index = 0;
     string name;
+    bool flat = false;          // an apartment interior seen through a peephole
+    bool outdoor = false;       // a rooftop: ',' cells have no ceiling, the sky is drawn instead, rain falls
     int tilesX = 0, tilesY = 0, cellsW = 0, cellsH = 0;
     vector<Lamp> lamps;                                      // ceiling bulbs first, then cold window lights
     float doorAmt[DOOR_KINDS] = {};                          // how far each door is open (0..1)

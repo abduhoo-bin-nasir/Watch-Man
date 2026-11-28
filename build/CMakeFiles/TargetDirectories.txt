@@ -1,4 +1,6 @@
+/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles/watchman_core.dir
 /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles/Watch-Man.dir
 /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles/logic_test.dir
+/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles/test.dir
 /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles/edit_cache.dir
 /home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles/rebuild_cache.dir

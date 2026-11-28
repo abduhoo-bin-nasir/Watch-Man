@@ -1,134 +1,92 @@
 [
 {
   "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/Game.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Game.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Game.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/Game.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/Level.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Level.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Level.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/Level.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/LevelData.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/LevelData.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/LevelData.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/LevelData.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/Entities.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Entities.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Entities.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/Entities.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/CharacterArt.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/CharacterArt.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/CharacterArt.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/CharacterArt.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/Dialogue.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Dialogue.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Dialogue.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/Dialogue.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/DialogueData.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/DialogueData.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/DialogueData.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/DialogueData.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/ClueBook.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/ClueBook.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/ClueBook.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/ClueBook.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/Audio.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Audio.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Audio.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/Audio.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/AudioData.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/AudioData.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/AudioData.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/AudioData.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/Synth.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Synth.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Synth.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/Synth.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/Renderer.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/Renderer.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
+  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/watchman_core.dir/src/Ui.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Ui.cpp",
+  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Ui.cpp",
+  "output": "CMakeFiles/watchman_core.dir/src/Ui.cpp.o"
+},
+{
+  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
   "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/Watch-Man.dir/src/main.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/main.cpp",
   "file": "/home/abduhoo/University/Projects/Watch-Man/src/main.cpp",
   "output": "CMakeFiles/Watch-Man.dir/src/main.cpp.o"
 },
 {
   "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/Watch-Man.dir/src/Game.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Game.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Game.cpp",
-  "output": "CMakeFiles/Watch-Man.dir/src/Game.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/Watch-Man.dir/src/Level.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Level.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Level.cpp",
-  "output": "CMakeFiles/Watch-Man.dir/src/Level.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/LevelData.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/LevelData.cpp",
-  "output": "CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/Watch-Man.dir/src/Entities.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Entities.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Entities.cpp",
-  "output": "CMakeFiles/Watch-Man.dir/src/Entities.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/CharacterArt.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/CharacterArt.cpp",
-  "output": "CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Dialogue.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Dialogue.cpp",
-  "output": "CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/DialogueData.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/DialogueData.cpp",
-  "output": "CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/ClueBook.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/ClueBook.cpp",
-  "output": "CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp",
-  "output": "CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -Wall -Wextra -I/usr/include -o CMakeFiles/Watch-Man.dir/src/Ui.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Ui.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Ui.cpp",
-  "output": "CMakeFiles/Watch-Man.dir/src/Ui.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/logic_test.dir/tests/logic_test.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/tests/logic_test.cpp",
+  "command": "/usr/bin/c++ -DTEST_OUT=\\\"/home/abduhoo/University/Projects/Watch-Man/build/test_output/\\\" -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/logic_test.dir/tests/logic_test.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/tests/logic_test.cpp",
   "file": "/home/abduhoo/University/Projects/Watch-Man/tests/logic_test.cpp",
   "output": "CMakeFiles/logic_test.dir/tests/logic_test.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/logic_test.dir/src/Game.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Game.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Game.cpp",
-  "output": "CMakeFiles/logic_test.dir/src/Game.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/logic_test.dir/src/Level.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Level.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Level.cpp",
-  "output": "CMakeFiles/logic_test.dir/src/Level.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/logic_test.dir/src/LevelData.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/LevelData.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/LevelData.cpp",
-  "output": "CMakeFiles/logic_test.dir/src/LevelData.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/logic_test.dir/src/Entities.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Entities.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Entities.cpp",
-  "output": "CMakeFiles/logic_test.dir/src/Entities.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/logic_test.dir/src/CharacterArt.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/CharacterArt.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/CharacterArt.cpp",
-  "output": "CMakeFiles/logic_test.dir/src/CharacterArt.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/logic_test.dir/src/Dialogue.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Dialogue.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Dialogue.cpp",
-  "output": "CMakeFiles/logic_test.dir/src/Dialogue.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/logic_test.dir/src/DialogueData.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/DialogueData.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/DialogueData.cpp",
-  "output": "CMakeFiles/logic_test.dir/src/DialogueData.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/logic_test.dir/src/ClueBook.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/ClueBook.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/ClueBook.cpp",
-  "output": "CMakeFiles/logic_test.dir/src/ClueBook.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/logic_test.dir/src/Renderer.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp",
-  "output": "CMakeFiles/logic_test.dir/src/Renderer.cpp.o"
-},
-{
-  "directory": "/home/abduhoo/University/Projects/Watch-Man/build",
-  "command": "/usr/bin/c++  -I/home/abduhoo/University/Projects/Watch-Man/src -O3 -DNDEBUG -std=gnu++17 -I/usr/include -o CMakeFiles/logic_test.dir/src/Ui.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Ui.cpp",
-  "file": "/home/abduhoo/University/Projects/Watch-Man/src/Ui.cpp",
-  "output": "CMakeFiles/logic_test.dir/src/Ui.cpp.o"
 }
 ]

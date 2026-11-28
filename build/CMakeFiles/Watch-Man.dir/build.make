@@ -86,179 +86,20 @@ CMakeFiles/Watch-Man.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Watch-Man.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/main.cpp -o CMakeFiles/Watch-Man.dir/src/main.cpp.s
 
-CMakeFiles/Watch-Man.dir/src/Game.cpp.o: CMakeFiles/Watch-Man.dir/flags.make
-CMakeFiles/Watch-Man.dir/src/Game.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/Game.cpp
-CMakeFiles/Watch-Man.dir/src/Game.cpp.o: CMakeFiles/Watch-Man.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Watch-Man.dir/src/Game.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Watch-Man.dir/src/Game.cpp.o -MF CMakeFiles/Watch-Man.dir/src/Game.cpp.o.d -o CMakeFiles/Watch-Man.dir/src/Game.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Game.cpp
-
-CMakeFiles/Watch-Man.dir/src/Game.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Watch-Man.dir/src/Game.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abduhoo/University/Projects/Watch-Man/src/Game.cpp > CMakeFiles/Watch-Man.dir/src/Game.cpp.i
-
-CMakeFiles/Watch-Man.dir/src/Game.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Watch-Man.dir/src/Game.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/Game.cpp -o CMakeFiles/Watch-Man.dir/src/Game.cpp.s
-
-CMakeFiles/Watch-Man.dir/src/Level.cpp.o: CMakeFiles/Watch-Man.dir/flags.make
-CMakeFiles/Watch-Man.dir/src/Level.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/Level.cpp
-CMakeFiles/Watch-Man.dir/src/Level.cpp.o: CMakeFiles/Watch-Man.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Watch-Man.dir/src/Level.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Watch-Man.dir/src/Level.cpp.o -MF CMakeFiles/Watch-Man.dir/src/Level.cpp.o.d -o CMakeFiles/Watch-Man.dir/src/Level.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Level.cpp
-
-CMakeFiles/Watch-Man.dir/src/Level.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Watch-Man.dir/src/Level.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abduhoo/University/Projects/Watch-Man/src/Level.cpp > CMakeFiles/Watch-Man.dir/src/Level.cpp.i
-
-CMakeFiles/Watch-Man.dir/src/Level.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Watch-Man.dir/src/Level.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/Level.cpp -o CMakeFiles/Watch-Man.dir/src/Level.cpp.s
-
-CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o: CMakeFiles/Watch-Man.dir/flags.make
-CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/LevelData.cpp
-CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o: CMakeFiles/Watch-Man.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o -MF CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o.d -o CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/LevelData.cpp
-
-CMakeFiles/Watch-Man.dir/src/LevelData.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Watch-Man.dir/src/LevelData.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abduhoo/University/Projects/Watch-Man/src/LevelData.cpp > CMakeFiles/Watch-Man.dir/src/LevelData.cpp.i
-
-CMakeFiles/Watch-Man.dir/src/LevelData.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Watch-Man.dir/src/LevelData.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/LevelData.cpp -o CMakeFiles/Watch-Man.dir/src/LevelData.cpp.s
-
-CMakeFiles/Watch-Man.dir/src/Entities.cpp.o: CMakeFiles/Watch-Man.dir/flags.make
-CMakeFiles/Watch-Man.dir/src/Entities.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/Entities.cpp
-CMakeFiles/Watch-Man.dir/src/Entities.cpp.o: CMakeFiles/Watch-Man.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Watch-Man.dir/src/Entities.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Watch-Man.dir/src/Entities.cpp.o -MF CMakeFiles/Watch-Man.dir/src/Entities.cpp.o.d -o CMakeFiles/Watch-Man.dir/src/Entities.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Entities.cpp
-
-CMakeFiles/Watch-Man.dir/src/Entities.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Watch-Man.dir/src/Entities.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abduhoo/University/Projects/Watch-Man/src/Entities.cpp > CMakeFiles/Watch-Man.dir/src/Entities.cpp.i
-
-CMakeFiles/Watch-Man.dir/src/Entities.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Watch-Man.dir/src/Entities.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/Entities.cpp -o CMakeFiles/Watch-Man.dir/src/Entities.cpp.s
-
-CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o: CMakeFiles/Watch-Man.dir/flags.make
-CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/CharacterArt.cpp
-CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o: CMakeFiles/Watch-Man.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o -MF CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o.d -o CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/CharacterArt.cpp
-
-CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abduhoo/University/Projects/Watch-Man/src/CharacterArt.cpp > CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.i
-
-CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/CharacterArt.cpp -o CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.s
-
-CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o: CMakeFiles/Watch-Man.dir/flags.make
-CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/Dialogue.cpp
-CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o: CMakeFiles/Watch-Man.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o -MF CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o.d -o CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Dialogue.cpp
-
-CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abduhoo/University/Projects/Watch-Man/src/Dialogue.cpp > CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.i
-
-CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/Dialogue.cpp -o CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.s
-
-CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o: CMakeFiles/Watch-Man.dir/flags.make
-CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/DialogueData.cpp
-CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o: CMakeFiles/Watch-Man.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o -MF CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o.d -o CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/DialogueData.cpp
-
-CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abduhoo/University/Projects/Watch-Man/src/DialogueData.cpp > CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.i
-
-CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/DialogueData.cpp -o CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.s
-
-CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o: CMakeFiles/Watch-Man.dir/flags.make
-CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/ClueBook.cpp
-CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o: CMakeFiles/Watch-Man.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o -MF CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o.d -o CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/ClueBook.cpp
-
-CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abduhoo/University/Projects/Watch-Man/src/ClueBook.cpp > CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.i
-
-CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/ClueBook.cpp -o CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.s
-
-CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o: CMakeFiles/Watch-Man.dir/flags.make
-CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp
-CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o: CMakeFiles/Watch-Man.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o -MF CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o.d -o CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp
-
-CMakeFiles/Watch-Man.dir/src/Renderer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Watch-Man.dir/src/Renderer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp > CMakeFiles/Watch-Man.dir/src/Renderer.cpp.i
-
-CMakeFiles/Watch-Man.dir/src/Renderer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Watch-Man.dir/src/Renderer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/Renderer.cpp -o CMakeFiles/Watch-Man.dir/src/Renderer.cpp.s
-
-CMakeFiles/Watch-Man.dir/src/Ui.cpp.o: CMakeFiles/Watch-Man.dir/flags.make
-CMakeFiles/Watch-Man.dir/src/Ui.cpp.o: /home/abduhoo/University/Projects/Watch-Man/src/Ui.cpp
-CMakeFiles/Watch-Man.dir/src/Ui.cpp.o: CMakeFiles/Watch-Man.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Watch-Man.dir/src/Ui.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Watch-Man.dir/src/Ui.cpp.o -MF CMakeFiles/Watch-Man.dir/src/Ui.cpp.o.d -o CMakeFiles/Watch-Man.dir/src/Ui.cpp.o -c /home/abduhoo/University/Projects/Watch-Man/src/Ui.cpp
-
-CMakeFiles/Watch-Man.dir/src/Ui.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Watch-Man.dir/src/Ui.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/abduhoo/University/Projects/Watch-Man/src/Ui.cpp > CMakeFiles/Watch-Man.dir/src/Ui.cpp.i
-
-CMakeFiles/Watch-Man.dir/src/Ui.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Watch-Man.dir/src/Ui.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/abduhoo/University/Projects/Watch-Man/src/Ui.cpp -o CMakeFiles/Watch-Man.dir/src/Ui.cpp.s
-
 # Object files for target Watch-Man
 Watch__Man_OBJECTS = \
-"CMakeFiles/Watch-Man.dir/src/main.cpp.o" \
-"CMakeFiles/Watch-Man.dir/src/Game.cpp.o" \
-"CMakeFiles/Watch-Man.dir/src/Level.cpp.o" \
-"CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o" \
-"CMakeFiles/Watch-Man.dir/src/Entities.cpp.o" \
-"CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o" \
-"CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o" \
-"CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o" \
-"CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o" \
-"CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o" \
-"CMakeFiles/Watch-Man.dir/src/Ui.cpp.o"
+"CMakeFiles/Watch-Man.dir/src/main.cpp.o"
 
 # External object files for target Watch-Man
 Watch__Man_EXTERNAL_OBJECTS =
 
 Watch-Man: CMakeFiles/Watch-Man.dir/src/main.cpp.o
-Watch-Man: CMakeFiles/Watch-Man.dir/src/Game.cpp.o
-Watch-Man: CMakeFiles/Watch-Man.dir/src/Level.cpp.o
-Watch-Man: CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o
-Watch-Man: CMakeFiles/Watch-Man.dir/src/Entities.cpp.o
-Watch-Man: CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o
-Watch-Man: CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o
-Watch-Man: CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o
-Watch-Man: CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o
-Watch-Man: CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o
-Watch-Man: CMakeFiles/Watch-Man.dir/src/Ui.cpp.o
 Watch-Man: CMakeFiles/Watch-Man.dir/build.make
 Watch-Man: CMakeFiles/Watch-Man.dir/compiler_depend.ts
+Watch-Man: libwatchman_core.a
 Watch-Man: /usr/lib64/libraylib.so
 Watch-Man: CMakeFiles/Watch-Man.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Watch-Man"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/abduhoo/University/Projects/Watch-Man/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Watch-Man"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Watch-Man.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -E copy_directory /home/abduhoo/University/Projects/Watch-Man/assets /home/abduhoo/University/Projects/Watch-Man/build/assets
 

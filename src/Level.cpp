@@ -33,7 +33,7 @@ void Level::setTileWall(int tx, int ty) {
 }
 
 void Level::build(const LevelDef& def, int floorIndex, const vector<FlightDef>& flights, int floorCount) {
-    index = floorIndex; name = def.name;
+    index = floorIndex; name = def.name; outdoor = def.outdoor; flat = def.flat;
     tilesY = (int)def.rows.size(); tilesX = (int)def.rows[0].size();
     cellsW = tilesX * 2; cellsH = tilesY * 2;
     grid.assign((size_t)cellsW * cellsH, Cell());
@@ -51,6 +51,8 @@ void Level::build(const LevelDef& def, int floorIndex, const vector<FlightDef>& 
                     switch (ch) {
                         case '.': case 'u': case 'd': case 'L': c.type = C_OPEN; break;
                         case 'W': c.type = C_WINDOW; break;
+                        case 'P': c.type = C_PARAPET; break;                    // the low wall round a roof
+                        case ',': c.type = C_OPEN; c.C = SKY_H; break;          // open roof: no ceiling
                         case 'k': c.type = C_RAIL; break;
                         case 'm': c.type = C_WALL; c.mat = MAT_METAL; break;
                         case 'E': c.type = C_DOOR; c.door = DOOR_ELEVATOR; break;
@@ -107,7 +109,12 @@ void Level::build(const LevelDef& def, int floorIndex, const vector<FlightDef>& 
 
     // ---- lights: ceiling bulbs from the design, then one cold light inside every window (dark except in lightning)
     lamps.clear();
-    for (const Bulb& bl : def.bulbs) { Lamp l; l.x = bl.x * 2; l.y = bl.y * 2; l.mode = bl.mode; lamps.push_back(l); }
+    for (const Bulb& bl : def.bulbs) {
+        Lamp l; l.x = bl.x * 2; l.y = bl.y * 2; l.mode = bl.mode;
+        if (bl.mode == 3) { l.win = true; l.r = 16.0f; }        // lightning lamp: cold light, only while a strike lights the sky
+        if (bl.mode == 4) l.r = 12.0f;                           // faint warm city glow on the roof
+        lamps.push_back(l);
+    }
     for (int cy = 0; cy < cellsH; cy++)
         for (int cx = 0; cx < cellsW; cx++) {
             const Cell& w = cellAt(cx, cy);
@@ -127,9 +134,10 @@ void Level::updateLamps(float time, float flash) {
     int n = 0;
     for (Lamp& l : lamps) {
         n++;
-        if (l.win) l.k = flash * 1.1f;
+        if (l.win) l.k = flash * 1.1f;                                                  // windows and lightning lamps
         else if (l.mode == 1) l.k = hs((int)(time * 12), n) > 0.8f ? 0.15f : 0.95f;     // buzzing
         else if (l.mode == 2) l.k = 0.28f;                                              // dying
+        else if (l.mode == 4) l.k = 0.45f;                                              // roof glow
         else l.k = 1.0f;
     }
 }

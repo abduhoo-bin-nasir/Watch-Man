@@ -3,16 +3,7 @@ logic_test: \
   /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o \
   /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o \
   CMakeFiles/logic_test.dir/tests/logic_test.cpp.o \
-  CMakeFiles/logic_test.dir/src/Game.cpp.o \
-  CMakeFiles/logic_test.dir/src/Level.cpp.o \
-  CMakeFiles/logic_test.dir/src/LevelData.cpp.o \
-  CMakeFiles/logic_test.dir/src/Entities.cpp.o \
-  CMakeFiles/logic_test.dir/src/CharacterArt.cpp.o \
-  CMakeFiles/logic_test.dir/src/Dialogue.cpp.o \
-  CMakeFiles/logic_test.dir/src/DialogueData.cpp.o \
-  CMakeFiles/logic_test.dir/src/ClueBook.cpp.o \
-  CMakeFiles/logic_test.dir/src/Renderer.cpp.o \
-  CMakeFiles/logic_test.dir/src/Ui.cpp.o \
+  libwatchman_core.a \
   /usr/lib64/libraylib.so \
   /usr/lib64/libraylib.so \
   /usr/lib/gcc/x86_64-redhat-linux/16/libstdc++.so \
@@ -58,25 +49,7 @@ logic_test: \
 
 CMakeFiles/logic_test.dir/tests/logic_test.cpp.o:
 
-CMakeFiles/logic_test.dir/src/Game.cpp.o:
-
-CMakeFiles/logic_test.dir/src/Level.cpp.o:
-
-CMakeFiles/logic_test.dir/src/LevelData.cpp.o:
-
-CMakeFiles/logic_test.dir/src/Entities.cpp.o:
-
-CMakeFiles/logic_test.dir/src/CharacterArt.cpp.o:
-
-CMakeFiles/logic_test.dir/src/Dialogue.cpp.o:
-
-CMakeFiles/logic_test.dir/src/DialogueData.cpp.o:
-
-CMakeFiles/logic_test.dir/src/ClueBook.cpp.o:
-
-CMakeFiles/logic_test.dir/src/Renderer.cpp.o:
-
-CMakeFiles/logic_test.dir/src/Ui.cpp.o:
+libwatchman_core.a:
 
 /usr/lib64/libraylib.so:
 

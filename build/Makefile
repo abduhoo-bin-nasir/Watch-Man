@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/abduhoo/University/Projects/Watch-Man/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -117,6 +127,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named watchman_core
+
+# Build rule for target.
+watchman_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 watchman_core
+.PHONY : watchman_core
+
+# fast build rule for target.
+watchman_core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/build
+.PHONY : watchman_core/fast
+
+#=============================================================================
 # Target rules for targets named Watch-Man
 
 # Build rule for target.
@@ -142,13 +165,60 @@ logic_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/build
 .PHONY : logic_test/fast
 
+src/Audio.o: src/Audio.cpp.o
+.PHONY : src/Audio.o
+
+# target to build an object file
+src/Audio.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Audio.cpp.o
+.PHONY : src/Audio.cpp.o
+
+src/Audio.i: src/Audio.cpp.i
+.PHONY : src/Audio.i
+
+# target to preprocess a source file
+src/Audio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Audio.cpp.i
+.PHONY : src/Audio.cpp.i
+
+src/Audio.s: src/Audio.cpp.s
+.PHONY : src/Audio.s
+
+# target to generate assembly for a file
+src/Audio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Audio.cpp.s
+.PHONY : src/Audio.cpp.s
+
+src/AudioData.o: src/AudioData.cpp.o
+.PHONY : src/AudioData.o
+
+# target to build an object file
+src/AudioData.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/AudioData.cpp.o
+.PHONY : src/AudioData.cpp.o
+
+src/AudioData.i: src/AudioData.cpp.i
+.PHONY : src/AudioData.i
+
+# target to preprocess a source file
+src/AudioData.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/AudioData.cpp.i
+.PHONY : src/AudioData.cpp.i
+
+src/AudioData.s: src/AudioData.cpp.s
+.PHONY : src/AudioData.s
+
+# target to generate assembly for a file
+src/AudioData.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/AudioData.cpp.s
+.PHONY : src/AudioData.cpp.s
+
 src/CharacterArt.o: src/CharacterArt.cpp.o
 .PHONY : src/CharacterArt.o
 
 # target to build an object file
 src/CharacterArt.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/CharacterArt.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/CharacterArt.cpp.o
 .PHONY : src/CharacterArt.cpp.o
 
 src/CharacterArt.i: src/CharacterArt.cpp.i
@@ -156,8 +226,7 @@ src/CharacterArt.i: src/CharacterArt.cpp.i
 
 # target to preprocess a source file
 src/CharacterArt.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/CharacterArt.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/CharacterArt.cpp.i
 .PHONY : src/CharacterArt.cpp.i
 
 src/CharacterArt.s: src/CharacterArt.cpp.s
@@ -165,8 +234,7 @@ src/CharacterArt.s: src/CharacterArt.cpp.s
 
 # target to generate assembly for a file
 src/CharacterArt.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/CharacterArt.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/CharacterArt.cpp.s
 .PHONY : src/CharacterArt.cpp.s
 
 src/ClueBook.o: src/ClueBook.cpp.o
@@ -174,8 +242,7 @@ src/ClueBook.o: src/ClueBook.cpp.o
 
 # target to build an object file
 src/ClueBook.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/ClueBook.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/ClueBook.cpp.o
 .PHONY : src/ClueBook.cpp.o
 
 src/ClueBook.i: src/ClueBook.cpp.i
@@ -183,8 +250,7 @@ src/ClueBook.i: src/ClueBook.cpp.i
 
 # target to preprocess a source file
 src/ClueBook.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/ClueBook.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/ClueBook.cpp.i
 .PHONY : src/ClueBook.cpp.i
 
 src/ClueBook.s: src/ClueBook.cpp.s
@@ -192,8 +258,7 @@ src/ClueBook.s: src/ClueBook.cpp.s
 
 # target to generate assembly for a file
 src/ClueBook.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/ClueBook.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/ClueBook.cpp.s
 .PHONY : src/ClueBook.cpp.s
 
 src/Dialogue.o: src/Dialogue.cpp.o
@@ -201,8 +266,7 @@ src/Dialogue.o: src/Dialogue.cpp.o
 
 # target to build an object file
 src/Dialogue.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Dialogue.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Dialogue.cpp.o
 .PHONY : src/Dialogue.cpp.o
 
 src/Dialogue.i: src/Dialogue.cpp.i
@@ -210,8 +274,7 @@ src/Dialogue.i: src/Dialogue.cpp.i
 
 # target to preprocess a source file
 src/Dialogue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Dialogue.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Dialogue.cpp.i
 .PHONY : src/Dialogue.cpp.i
 
 src/Dialogue.s: src/Dialogue.cpp.s
@@ -219,8 +282,7 @@ src/Dialogue.s: src/Dialogue.cpp.s
 
 # target to generate assembly for a file
 src/Dialogue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Dialogue.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Dialogue.cpp.s
 .PHONY : src/Dialogue.cpp.s
 
 src/DialogueData.o: src/DialogueData.cpp.o
@@ -228,8 +290,7 @@ src/DialogueData.o: src/DialogueData.cpp.o
 
 # target to build an object file
 src/DialogueData.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/DialogueData.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/DialogueData.cpp.o
 .PHONY : src/DialogueData.cpp.o
 
 src/DialogueData.i: src/DialogueData.cpp.i
@@ -237,8 +298,7 @@ src/DialogueData.i: src/DialogueData.cpp.i
 
 # target to preprocess a source file
 src/DialogueData.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/DialogueData.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/DialogueData.cpp.i
 .PHONY : src/DialogueData.cpp.i
 
 src/DialogueData.s: src/DialogueData.cpp.s
@@ -246,8 +306,7 @@ src/DialogueData.s: src/DialogueData.cpp.s
 
 # target to generate assembly for a file
 src/DialogueData.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/DialogueData.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/DialogueData.cpp.s
 .PHONY : src/DialogueData.cpp.s
 
 src/Entities.o: src/Entities.cpp.o
@@ -255,8 +314,7 @@ src/Entities.o: src/Entities.cpp.o
 
 # target to build an object file
 src/Entities.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Entities.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Entities.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Entities.cpp.o
 .PHONY : src/Entities.cpp.o
 
 src/Entities.i: src/Entities.cpp.i
@@ -264,8 +322,7 @@ src/Entities.i: src/Entities.cpp.i
 
 # target to preprocess a source file
 src/Entities.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Entities.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Entities.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Entities.cpp.i
 .PHONY : src/Entities.cpp.i
 
 src/Entities.s: src/Entities.cpp.s
@@ -273,8 +330,7 @@ src/Entities.s: src/Entities.cpp.s
 
 # target to generate assembly for a file
 src/Entities.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Entities.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Entities.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Entities.cpp.s
 .PHONY : src/Entities.cpp.s
 
 src/Game.o: src/Game.cpp.o
@@ -282,8 +338,7 @@ src/Game.o: src/Game.cpp.o
 
 # target to build an object file
 src/Game.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Game.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Game.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Game.cpp.o
 .PHONY : src/Game.cpp.o
 
 src/Game.i: src/Game.cpp.i
@@ -291,8 +346,7 @@ src/Game.i: src/Game.cpp.i
 
 # target to preprocess a source file
 src/Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Game.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Game.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Game.cpp.i
 .PHONY : src/Game.cpp.i
 
 src/Game.s: src/Game.cpp.s
@@ -300,8 +354,7 @@ src/Game.s: src/Game.cpp.s
 
 # target to generate assembly for a file
 src/Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Game.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Game.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Game.cpp.s
 .PHONY : src/Game.cpp.s
 
 src/Level.o: src/Level.cpp.o
@@ -309,8 +362,7 @@ src/Level.o: src/Level.cpp.o
 
 # target to build an object file
 src/Level.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Level.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Level.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Level.cpp.o
 .PHONY : src/Level.cpp.o
 
 src/Level.i: src/Level.cpp.i
@@ -318,8 +370,7 @@ src/Level.i: src/Level.cpp.i
 
 # target to preprocess a source file
 src/Level.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Level.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Level.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Level.cpp.i
 .PHONY : src/Level.cpp.i
 
 src/Level.s: src/Level.cpp.s
@@ -327,8 +378,7 @@ src/Level.s: src/Level.cpp.s
 
 # target to generate assembly for a file
 src/Level.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Level.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Level.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Level.cpp.s
 .PHONY : src/Level.cpp.s
 
 src/LevelData.o: src/LevelData.cpp.o
@@ -336,8 +386,7 @@ src/LevelData.o: src/LevelData.cpp.o
 
 # target to build an object file
 src/LevelData.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/LevelData.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/LevelData.cpp.o
 .PHONY : src/LevelData.cpp.o
 
 src/LevelData.i: src/LevelData.cpp.i
@@ -345,8 +394,7 @@ src/LevelData.i: src/LevelData.cpp.i
 
 # target to preprocess a source file
 src/LevelData.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/LevelData.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/LevelData.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/LevelData.cpp.i
 .PHONY : src/LevelData.cpp.i
 
 src/LevelData.s: src/LevelData.cpp.s
@@ -354,8 +402,7 @@ src/LevelData.s: src/LevelData.cpp.s
 
 # target to generate assembly for a file
 src/LevelData.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/LevelData.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/LevelData.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/LevelData.cpp.s
 .PHONY : src/LevelData.cpp.s
 
 src/Renderer.o: src/Renderer.cpp.o
@@ -363,8 +410,7 @@ src/Renderer.o: src/Renderer.cpp.o
 
 # target to build an object file
 src/Renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Renderer.cpp.o
 .PHONY : src/Renderer.cpp.o
 
 src/Renderer.i: src/Renderer.cpp.i
@@ -372,8 +418,7 @@ src/Renderer.i: src/Renderer.cpp.i
 
 # target to preprocess a source file
 src/Renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Renderer.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Renderer.cpp.i
 .PHONY : src/Renderer.cpp.i
 
 src/Renderer.s: src/Renderer.cpp.s
@@ -381,17 +426,39 @@ src/Renderer.s: src/Renderer.cpp.s
 
 # target to generate assembly for a file
 src/Renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Renderer.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Renderer.cpp.s
 .PHONY : src/Renderer.cpp.s
+
+src/Synth.o: src/Synth.cpp.o
+.PHONY : src/Synth.o
+
+# target to build an object file
+src/Synth.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Synth.cpp.o
+.PHONY : src/Synth.cpp.o
+
+src/Synth.i: src/Synth.cpp.i
+.PHONY : src/Synth.i
+
+# target to preprocess a source file
+src/Synth.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Synth.cpp.i
+.PHONY : src/Synth.cpp.i
+
+src/Synth.s: src/Synth.cpp.s
+.PHONY : src/Synth.s
+
+# target to generate assembly for a file
+src/Synth.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Synth.cpp.s
+.PHONY : src/Synth.cpp.s
 
 src/Ui.o: src/Ui.cpp.o
 .PHONY : src/Ui.o
 
 # target to build an object file
 src/Ui.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Ui.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Ui.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Ui.cpp.o
 .PHONY : src/Ui.cpp.o
 
 src/Ui.i: src/Ui.cpp.i
@@ -399,8 +466,7 @@ src/Ui.i: src/Ui.cpp.i
 
 # target to preprocess a source file
 src/Ui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Ui.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Ui.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Ui.cpp.i
 .PHONY : src/Ui.cpp.i
 
 src/Ui.s: src/Ui.cpp.s
@@ -408,8 +474,7 @@ src/Ui.s: src/Ui.cpp.s
 
 # target to generate assembly for a file
 src/Ui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Watch-Man.dir/build.make CMakeFiles/Watch-Man.dir/src/Ui.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/logic_test.dir/build.make CMakeFiles/logic_test.dir/src/Ui.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/watchman_core.dir/build.make CMakeFiles/watchman_core.dir/src/Ui.cpp.s
 .PHONY : src/Ui.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -468,8 +533,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... Watch-Man"
 	@echo "... logic_test"
+	@echo "... watchman_core"
+	@echo "... src/Audio.o"
+	@echo "... src/Audio.i"
+	@echo "... src/Audio.s"
+	@echo "... src/AudioData.o"
+	@echo "... src/AudioData.i"
+	@echo "... src/AudioData.s"
 	@echo "... src/CharacterArt.o"
 	@echo "... src/CharacterArt.i"
 	@echo "... src/CharacterArt.s"
@@ -497,6 +570,9 @@ help:
 	@echo "... src/Renderer.o"
 	@echo "... src/Renderer.i"
 	@echo "... src/Renderer.s"
+	@echo "... src/Synth.o"
+	@echo "... src/Synth.i"
+	@echo "... src/Synth.s"
 	@echo "... src/Ui.o"
 	@echo "... src/Ui.i"
 	@echo "... src/Ui.s"

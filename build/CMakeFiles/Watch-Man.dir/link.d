@@ -3,16 +3,7 @@ Watch-Man: \
   /usr/lib/gcc/x86_64-redhat-linux/16/../../../../lib64/crti.o \
   /usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o \
   CMakeFiles/Watch-Man.dir/src/main.cpp.o \
-  CMakeFiles/Watch-Man.dir/src/Game.cpp.o \
-  CMakeFiles/Watch-Man.dir/src/Level.cpp.o \
-  CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o \
-  CMakeFiles/Watch-Man.dir/src/Entities.cpp.o \
-  CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o \
-  CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o \
-  CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o \
-  CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o \
-  CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o \
-  CMakeFiles/Watch-Man.dir/src/Ui.cpp.o \
+  libwatchman_core.a \
   /usr/lib64/libraylib.so \
   /usr/lib64/libraylib.so \
   /usr/lib/gcc/x86_64-redhat-linux/16/libstdc++.so \
@@ -58,25 +49,7 @@ Watch-Man: \
 
 CMakeFiles/Watch-Man.dir/src/main.cpp.o:
 
-CMakeFiles/Watch-Man.dir/src/Game.cpp.o:
-
-CMakeFiles/Watch-Man.dir/src/Level.cpp.o:
-
-CMakeFiles/Watch-Man.dir/src/LevelData.cpp.o:
-
-CMakeFiles/Watch-Man.dir/src/Entities.cpp.o:
-
-CMakeFiles/Watch-Man.dir/src/CharacterArt.cpp.o:
-
-CMakeFiles/Watch-Man.dir/src/Dialogue.cpp.o:
-
-CMakeFiles/Watch-Man.dir/src/DialogueData.cpp.o:
-
-CMakeFiles/Watch-Man.dir/src/ClueBook.cpp.o:
-
-CMakeFiles/Watch-Man.dir/src/Renderer.cpp.o:
-
-CMakeFiles/Watch-Man.dir/src/Ui.cpp.o:
+libwatchman_core.a:
 
 /usr/lib64/libraylib.so:
 

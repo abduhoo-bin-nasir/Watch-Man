@@ -24,22 +24,31 @@ if(NOT raylib_FOUND)
   FetchContent_MakeAvailable(raylib)
 endif()
 
+# Everything except main() is compiled ONCE into this library; the game and every test link it.
+# (New source files: add them to this list. Nothing else needs to change.)
 set(GAME_SOURCES
   src/Game.cpp
   src/Level.cpp        src/LevelData.cpp
   src/Entities.cpp     src/CharacterArt.cpp
   src/Dialogue.cpp     src/DialogueData.cpp
   src/ClueBook.cpp
+  src/Audio.cpp        src/AudioData.cpp    src/Synth.cpp
   src/Renderer.cpp
   src/Ui.cpp)
 
-add_executable(Watch-Man src/main.cpp ${GAME_SOURCES})
-target_include_directories(Watch-Man PRIVATE src)
-target_link_libraries(Watch-Man PRIVATE raylib)
+add_library(watchman_core STATIC ${GAME_SOURCES})
+target_include_directories(watchman_core PUBLIC src)
+find_package(Threads REQUIRED)
+target_link_libraries(watchman_core PUBLIC raylib Threads::Threads)
+
+add_executable(Watch-Man src/main.cpp)
+target_link_libraries(Watch-Man PRIVATE watchman_core)
 
 if(MSVC)
+  target_compile_options(watchman_core PRIVATE /W3)
   target_compile_options(Watch-Man PRIVATE /W3)
 else()
+  target_compile_options(watchman_core PRIVATE -Wall -Wextra)
   target_compile_options(Watch-Man PRIVATE -Wall -Wextra)
 endif()
 
@@ -52,10 +61,32 @@ if(EXISTS "${CMAKE_SOURCE_DIR}/assets")
   )
 endif()
 
-# Headless logic tests (no window). Run ./build/logic_test after building.
-option(BUILD_TESTS "Build the headless logic tests" ON)
+# ---------------------------------------------------------------------------------------------------------------------
+# Headless tests (no window). Build with the game; run all of them with:   ctest --test-dir build --output-on-failure
+# Tests that draw write their pictures (.ppm) to  build/test_output/  (open them with an image viewer such as IrfanView or GIMP).
+#   logic_test      your original whole-case test (tests/logic_test.cpp)
+#   cast_test       every person is placed once on an open cell or behind a real door; every clue id in dialogue exists
+#   peep_test       the peephole on every kind of door, looking around, stepping back, random-input fuzz
+#   roof_walk_test  stairs to the roof and back, random-input fuzz on the roof, the lift skips the roof
+#   mirror_test, sprite_test, facing_test, cast_view_test, flat_test, roof_test   write pictures to look at
+option(BUILD_TESTS "Build the headless tests" ON)
 if(BUILD_TESTS)
-  add_executable(logic_test tests/logic_test.cpp ${GAME_SOURCES})
-  target_include_directories(logic_test PRIVATE src)
-  target_link_libraries(logic_test PRIVATE raylib)
+  enable_testing()
+  set(TEST_OUT_DIR "${CMAKE_BINARY_DIR}/test_output")
+  file(MAKE_DIRECTORY "${TEST_OUT_DIR}")
+
+  set(TEST_NAMES logic_test cast_test mirror_test sprite_test facing_test cast_view_test flat_test roof_test)
+  # these two reach into private members (#define private public), which MSVC cannot link; GCC / MinGW / Clang can
+  if(NOT MSVC)
+    list(APPEND TEST_NAMES peep_test roof_walk_test)
+  endif()
+
+  foreach(t ${TEST_NAMES})
+    if(EXISTS "${CMAKE_SOURCE_DIR}/tests/${t}.cpp")
+      add_executable(${t} tests/${t}.cpp)
+      target_link_libraries(${t} PRIVATE watchman_core)
+      target_compile_definitions(${t} PRIVATE TEST_OUT=\"${TEST_OUT_DIR}/\")
+      add_test(NAME ${t} COMMAND ${t} WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
+    endif()
+  endforeach()
 endif()
